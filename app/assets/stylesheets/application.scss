@@ -99,6 +99,28 @@
     text-align: center;
   }
   
+  /* 공지사항 상단 Thum 영역(PC) */
+  .board-notice {
+    background: url('/board_banner_img/board_banner4.jpg') no-repeat fixed;
+    background-size: 100% 70%;
+    background-position: 0px -180px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 150px 0px 80px 0px;
+    text-align: center;
+  }
+  
+  /* 게시판 상단 Thum 영역(모바일) */
+  .board-notice_mobile {
+    background: url('/board_banner_img/board_banner4.jpg') no-repeat center center/cover scroll;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 100px 0px 50px 0px;
+    text-align: center;
+  }
+  
   .message_pc{
     background: url('/board_banner_img/board_banner3.jpg') no-repeat fixed;
     background-size: 100% 70%;
