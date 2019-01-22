@@ -1,0 +1,81 @@
+<%= form_with(model: univ, local: true) do |form| %>
+  <% if univ.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(univ.errors.count, "error") %> prohibited this univ from being saved:</h2>
+
+      <ul>
+      <% univ.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"대학명(한글)" %></div>
+    <div class="col-md-10"><%= form.text_field :univ_name_kor, id: :univ_univ_name_kor, class: "input_noborder" %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"대학명(영어)" %></div>
+    <div class="col-md-10"><%= form.text_field :univ_name_eng, id: :univ_univ_name_eng, class: "input_noborder" %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"대학 줄임말 등 명칭" %></div>
+    <div class="col-md-10"><%= form.text_field :univ_nickname, id: :univ_univ_nickname, class: "input_noborder", placeholder: "강대 UNIST 항공대" %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"대학 웹메일 주소" %></div>
+    <div class="col-md-10"><%= form.text_field :email_url, id: :univ_email_url, class: "input_noborder" %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"대학 이미지 이름(영문)" %></div>
+    <div class="col-md-10"><%= form.text_field :img_name, id: :univ_img_name, class: "input_noborder" %></div>
+  </div>
+
+  <div class="field" style="margin-top: 10px; margin-bottom: 30px;">
+    <%= tinymce :language => "en" %>
+    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10" %>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div><%= form.label :ms_office %> <%= form.check_box :ms_office, id: :univ_ms_office %></div>
+      <div><%= form.label :naver_music %> <%= form.check_box :naver_music, id: :univ_naver_music %></div>
+      <div><%= form.label :aws_credit_normal %> <%= form.check_box :aws_credit_normal, id: :univ_aws_credit_normal %></div>
+      <div><%= form.label :aws_credit_100 %> <%= form.check_box :aws_credit_100, id: :univ_aws_credit_100 %></div>
+      <div><%= form.label :github %> <%= form.check_box :github, id: :univ_github %></div>
+      <div><%= form.label :jet_brain %> <%= form.check_box :jet_brain, id: :univ_jet_brain %></div>
+      <div><%= form.label :Y_goon %> <%= form.check_box :Y_goon, id: :univ_Y_goon %></div>
+      <div><%= form.label :"KFC" %> <%= form.check_box :KFC, id: :univ_KFC %></div>
+      <div><%= form.label :"AOC" %> <%= form.check_box :AOC, id: :univ_AOC %></div>
+      <div><%= form.label :adobe %> <%= form.check_box :adobe, id: :univ_adobe %></div>
+    </div>
+    <div class="col-md-6">
+      <div><%= form.label :"한국장학재단" %> <%= form.check_box :KOSAF, id: :univ_KOSAF %></div>
+      <div><%= form.label :"파란사다리" %> <%= form.check_box :blue_ladder, id: :univ_blue_ladder %></div>
+      <div><%= form.label :"무료 논문 열람 : DBPIA" %> <%= form.check_box :dbpia, id: :univ_dbpia %></div>
+      <div><%= form.label :"무료 논문 열람 : RISS" %> <%= form.check_box :riss, id: :univ_riss %></div>
+      <div><%= form.label :job_planet %> <%= form.check_box :job_planet, id: :univ_job_planet %></div>
+      <div><%= form.label :win10 %> <%= form.check_box :win10, id: :univ_win10 %></div>
+      <div><%= form.label :inflearn %> <%= form.check_box :inflearn, id: :univ_inflearn %></div>
+      <div><%= form.label :edwith %> <%= form.check_box :edwith, id: :univ_edwith %></div>
+      <div><%= form.label :goorm_ide %> <%= form.check_box :goorm_ide, id: :univ_goorm_ide %></div>
+      <div><%= form.label :"기타" %> <%= form.check_box :etc, id: :univ_etc %></div>
+    </div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-12"><%= form.label :"기타 혜택('기타' 체크 필수)" %></div>
+    <div class="col-md-12"><%= form.text_area :etc_content, id: :univ_etc_content, class: "form-control tinymce" %></div>
+  </div>
+
+  <div class="actions" align="center" style="margin-top: 30px">
+    <%= form.button "작성", class: "btn btn-sm btn-primary" %>
+    <%= link_to '목록', univs_path, class: "btn btn-sm btn-dark"  %>
+  </div>
+<% end %>

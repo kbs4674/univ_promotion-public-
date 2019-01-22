@@ -1,0 +1,84 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 메인 : PC */
+@media(min-width:981px){
+    .main-univ_search > .twitter-typeahead > .tt-dropdown-menu > .tt-dataset-0 {
+        border: 2px solid #18d26e;
+        float: left;
+        margin-top: 35px;
+        min-width: 450px;
+        max-width: 450px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+}
+/* 메인 : Mobile */
+@media(max-width:980px){
+    .main-univ_search > .twitter-typeahead > .tt-dropdown-menu > .tt-dataset-0 {
+        float: left;
+        margin-top: 35px;
+        width: 300px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+}
+
+.empty-message {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #18d26e;
+    color: white;
+}
+
+
+.tags {
+    width: 95%;
+    margin: 40px auto;
+    border-radius: 18px;
+    padding: 10px 20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.tag {
+    font-family: 'nanum-gothic';
+    padding: 5px;
+    margin: 5px;
+    border-radius:10px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: rgba(138, 124, 124, 0.37);
+    color: white;
+    font-size: 10px;
+}
+
+.tag.select {
+    font-weight: bold;
+    background-color: #8a7c7c;
+}
+
+#contents {
+    min-height: 300px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+#contents a:not(.select) {
+    display: none;
+}
+
+#contents a img {
+    width: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#contents a img:hover {
+    background-color: rgba(0, 0, 0, 0.52);
+    color: white;
+}

@@ -1,0 +1,68 @@
+<% if can? :new, @univs %>
+
+  <% if can? :new, @univs %>
+    <div class="offset-md-11" style="margin-top: 200px; margin-bottom: 50px;">
+      <%= link_to '새 대학 추가', new_univ_path, class: "btn btn-sm btn-primary" %>
+    </div>
+  <% end %>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>대학명</th>
+        <th>대학명(영어)</th>
+        <th>혜택 목록</th>
+        <th>Ms office</th>
+        <th>Naver music</th>
+        <th>Aws credit</th>
+        <th>Github</th>
+        <th>Job planet</th>
+        <th>Win10</th>
+        <th>Inflearn</th>
+        <th>Edwith</th>
+        <th>Goorm ide</th>
+        <th>Etc</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @univs.each do |univ| %>
+        <tr>
+          <td><%= univ.univ_name_kor %></td>
+          <td><%= univ.univ_name_eng %></td>
+          <td><%= univ.content %></td>
+          <td><%= univ.ms_office %></td>
+          <td><%= univ.naver_music %></td>
+          <td><%= univ.aws_credit_normal %></td>
+          <td><%= univ.github %></td>
+          <td><%= univ.job_planet %></td>
+          <td><%= univ.win10 %></td>
+          <td><%= univ.inflearn %></td>
+          <td><%= univ.edwith %></td>
+          <td><%= univ.goorm_ide %></td>
+          <td><%= univ.etc %></td>
+          <% if can? :edit, @univs %>
+            <td><%= link_to '수정', edit_univ_path(univ) %></td>
+          <% end %>
+          <% if can? :destroy, @univs %>
+            <td><%= link_to '제거', univ, method: :delete, data: { confirm: '삭제하시겠습니까?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <% if can? :new, @univs %>
+    <div class="offset-md-11">
+      <%= link_to '새 대학 추가', new_univ_path, class: "btn btn-sm btn-primary" %>
+    </div>
+  <% end %>
+<% else %>
+  <div align="center" style="margin-top: 200px; margin-bottom: 200px;">
+    <img src="<%= asset_path 'logo.png' %>" width="150px"><br/><br/>
+    해당 페이지는 접근 불가입니다.
+  </div>
+<% end %>

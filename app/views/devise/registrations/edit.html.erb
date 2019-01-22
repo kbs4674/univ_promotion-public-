@@ -1,0 +1,66 @@
+<div class="container login_main">
+  <div class="container devise_form">
+    <div class="row justify-content-md-center mttitle">
+      <div class="col-md-7 bor">
+        <h4 class="mt">개인정보 수정</h4>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div class="field mt">
+      <%= f.label :"이메일" %><br />
+      <%= f.email_field :email, class: "form-control", required: true, autofocus: true, autocomplete: "email" %>
+    </div>
+    
+    <div class="field mt">
+      <%= f.label :"닉네임" %><br />
+      <%= f.text_field :nickname, class: "form-control", required: true, autofocus: true %>
+    </div>
+  
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div><%= resource.unconfirmed_email %> 계정에 대한 인증을 기다리고있습니다.</div>
+    <% end %>
+  
+    <div class="field mt">
+      <%= f.label :"현재 암호" %> <i>(정보 수정 시 입력해주세요.)</i><br />
+      <%= f.password_field :current_password, class: "form-control", required: true, autocomplete: "off", style: "font-family: sans-serif;" %>
+    </div>
+  
+    <div class="field mt">
+      <%= f.label :"변경할 암호" %> <i>(암호 변경을 안할 시 입력하지 않으셔도 됩니다.)</i><br />
+      <%= f.password_field :password, class: "form-control", autocomplete: "off", style: "font-family: sans-serif;" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em>최소 <%= @minimum_password_length %>글자 이상</em>
+      <% end %>
+    </div>
+  
+    <div class="field mt">
+      <%= f.label :"변경할 암호 재 확인" %><br />
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off", style: "font-family: sans-serif;" %>
+    </div>
+  
+    <div class="actions mt", align="right">
+      <%= f.submit "정보 변경", class: "btn btn-sm btn-info" %>
+    </div>
+  <% end %>
+  </div>
+  </div>
+  
+  <% if not (current_user.has_role? :block_red) %> 
+  <div class="row justify-content-md-center mt-danger">
+    <div class="col-md-7 bor">
+      <h4 class="mt">회원탈퇴 진행</h4>
+      <div align="right">
+        <%= button_to "회원 탈퇴", registration_path(resource_name), class: "btn btn-sm btn-danger", data: { confirm: "회원탈퇴 시 게시글, 쪽지기록 등 개인정보 이력이 다 삭제됩니다. 정말 탈퇴하시겠습니까?" }, method: :delete %>
+      </div>
+      <%= link_to "이전으로", :back %>
+    </div>
+  </div>
+  <% end %>
+  
+  <div style="margin-top: 30px" align="center">
+      <%= render "devise/shared/info" %>
+    </div>
+</div>
+</div>

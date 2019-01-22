@@ -1,0 +1,27 @@
+<%= form_with(model: @bulletin.present? ? [@post.bulletin, @post] : @post, local: true) do |f| %>
+  <div class="field" style="margin-top: 30px;">
+    <div class="row">
+      <div class="col-3 col-sm-2 col-md-1"><%= f.label :"제목" %></div>
+      <div class="col-9 col-sm-10 col-md-11"><%= f.text_field :title, class: "input_noborder", autocomplete: "off" %></div>
+    </div>
+  </div>
+  
+  <% if @bulletin.opt_email == true %>
+    <div class="field" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col-3 col-sm-2 col-md-1"><%= f.label :"이메일" %></div>
+        <div class="col-9 col-sm-10 col-md-11"><%= f.text_field :email, class: "input_noborder", autocomplete: "off", placeholder: "예시 : kbs4674@naver.com, kbs4674@gmail.com, kbs4674@likelion.org"  %></div>
+      </div>
+  </div>
+  <% end %>
+
+  <div class="field" style="margin-top: 10px;">
+    <%= tinymce :language => "en" %>
+    <%= f.text_area :content, id: :post_content, class: "form-control tinymce", rows: "10" %>
+  </div>
+
+  <div align="center" class="actions" style="margin-top: 30px; margin-bottom: 50px;">
+    <%= f.submit :"글 쓰기", class: "btn btn-sm btn-primary" %>
+    <%= link_to '목록', (@bulletin.present? ? bulletin_posts_path(@bulletin) : posts_path), class: 'btn btn-sm btn-outline-dark' %>
+  </div>
+<% end %>

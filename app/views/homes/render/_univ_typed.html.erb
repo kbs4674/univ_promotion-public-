@@ -1,0 +1,22 @@
+<script>
+  var boolValue = false;
+  var a = document.querySelectorAll('.twitter-typeahead');
+  document.querySelector(".typeahead.input_noborder_white.tt-hint").style.display = "none";
+  a[0].style.display = 'none';
+  
+  a[1].addEventListener("click", function() {
+    a[0].style.display = 'inline-block';
+    a[1].style.display = 'none';
+    $("#input_form").focus();
+    boolValue = true;
+  });
+  
+  $("#input_form").focusout(function() {
+    console.log("focusout");
+    if (boolValue) {
+      a[0].style = "display: none;";
+      a[1].style = "text-align: left; display: inline-block;"
+      boolValue = false;
+    }
+  });
+</script>

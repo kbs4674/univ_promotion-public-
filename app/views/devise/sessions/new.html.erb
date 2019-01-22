@@ -1,0 +1,77 @@
+<div class="container login_main">
+  <div class="container devise_form">
+  
+    <div class="row justify-content-md-center mttitle">
+    <div class="col-md-7 bor">
+      <h4 class="mt">로그인</h4>
+      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% if alert %>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= alert %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% elsif notice %>
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <%= notice %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% end %>
+        
+        <div class="field mt">
+          <%= f.label :"이메일" %><br />
+          <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+        </div>
+        
+        <div class="field mt">
+          <%= f.label :"암호" %><br />
+          <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "off" %>
+        </div>
+        
+        <% if devise_mapping.rememberable? -%>
+          <div class="field mt" align="right">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+        
+        <div class="container row" style="justify-content: center;">
+          <div>
+            <%= f.submit "로그인", class: "btn btn-sm btn-info" %>
+          </div>
+        </div>
+        
+        <hr/>
+        
+        <%- if devise_mapping.omniauthable? %>
+        <div align="center" style="margin-bottom: 10px;">
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <% if provider.to_s == "naver" %>
+                <%= link_to "네이버 아이디 로그인", omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #00C73C; color: white" %>
+            <% end %>
+            <!--<#% if provider.to_s == "facebook" %>-->
+            <!--  <div class="col-5 col-md-3">-->
+            <!--    <#%= link_to "페이스북 아이디 로그인", omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #2851a3; color: white" %>-->
+            <!--  </div>-->
+            <!--<#% end %>-->
+            <% if provider.to_s == "google_oauth2" %>
+                <%= link_to "구글 아이디 로그인", omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #ff422f; color: white" %>
+            <% end %>
+          <% end -%>
+        </div>
+      <% end -%>
+        
+      </div>
+    <% end %>
+    
+    </div>
+    <div style="margin-top: 30px" align="center">
+      <%= render "devise/shared/info" %>
+    </div>
+    
+  </div>
+</div>

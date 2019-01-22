@@ -1,0 +1,8 @@
+<% if ((current_user.voted_up_on? @promotion) == true) %>
+    $('.like-<%= @promotion.id %>').replaceWith('<%= escape_javascript render 'promotions/vote_render/vote_up', x: @promotion %>');
+<% else %>
+    $('.like-<%= @promotion.id %>').replaceWith('<%= escape_javascript render 'promotions/vote_render/vote_cancel', x: @promotion %>');
+<% end %>
+
+$('.like_count-<%= @promotion.id %>').empty();
+$('.like_count-<%= @promotion.id %>').append('<%= @promotion.get_upvotes.size %>');

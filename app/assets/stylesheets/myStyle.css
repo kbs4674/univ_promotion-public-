@@ -1,0 +1,55 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+* {
+  font-family: 'Jeju Gothic', sans-serif;
+}
+
+#user_password {
+  font-family: sans-serif;
+}
+
+.twitter-typeahead {
+  text-align: left;
+}
+
+.main-univ_search .typed-cursor {
+  font-size: 2.4em;
+  color: white;
+}
+
+.one-page-arrow {
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -16px;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  text-align: center;
+  color: #222;
+}
+
+#main_typed {
+  font-size: 2.6em;
+}
+
+#info {
+  font-size: 1.01em;
+}
+
+/* Mobile view */
+@media (max-width: 700px) {
+  #main_typed {
+    font-size: 2.3em;
+  }
+  #damda {
+    max-width: 70px;
+    filter: brightness(130%);
+  }
+}
+
+#damda {
+  height: 50px;
+  filter: brightness(130%);
+}

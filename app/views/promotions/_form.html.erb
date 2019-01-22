@@ -1,0 +1,43 @@
+<%= form_with(model: promotion, local: true) do |form| %>
+  <% if promotion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
+
+      <ul>
+      <% promotion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"혜택 명" %></div>
+    <div class="col-md-10"><%= form.text_field :title, id: :promotion_title, class: "input_noborder" %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"헤택 URL 주소" %></div>
+    <div class="col-md-10"><%= form.text_field :url, id: :promotion_url, class: "input_noborder" %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"썸네일 사진 이름" %></div>
+    <div class="col-md-10"><%= form.text_field :thumb, id: :promotion_thumb, class: "input_noborder" %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"혜택 해시태그" %></div>
+    <div class="col-md-10"><%= form.text_field :univ_hashtag, id: :promotion_univ_hashtag, class: "input_noborder", style: "font-family: nanum-gothic", placeholder: "#기본제공 #공대 #컴퓨터공학 #디자이너 #미대 #일상樂 #먹방 #스터디 #학업 #장학금 #소프트웨어 #하드웨어 #할인 #우리만_있다 #무료 #취업" %></div>
+  </div>
+
+  <div class="field row">
+    <div class="col-md-12"><%= form.label :"혜택 설명" %></div>
+    <div class="col-md-12"><%= form.text_area :content, id: :promotion_content, class: "form-control" %></div>
+  </div>
+
+  <div class="actions" align="center" style="margin-top: 30px">
+    <%= form.button "작성", class: "btn btn-sm btn-primary" %>
+    <%= link_to '목록', promotions_path, class: "btn btn-sm btn-dark"  %>
+  </div>
+<% end %>

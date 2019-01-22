@@ -1,0 +1,194 @@
+<%= render 'univs/top_render/show_top_banner', univ: @univ %>
+
+<div class="container">
+  
+  <% if (user_signed_in?) && (current_user.has_role? :admin) %>
+    <div class="row" style="background-color: #ffbebe; padding: 10px; margin-top: 30px;">
+      <div class="col-md-2" style="padding-top: 5px"><i class="fas fa-exclamation-triangle"></i> 관리자 Zome</div>
+      <div class="col-md-10">
+        <% if can? :destroy, @univ %>
+          <%= link_to '삭제', @univ, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '정말로 삭제하시겠습니까?' } %>
+        <% end %>
+        <% if can? :edit, @univ %>
+          <%= link_to '수정', edit_univ_path(@univ), class: 'btn btn-sm btn-outline-dark' %>
+        <% end %>
+        <% if can? :index, @univ %>
+          <%= link_to '목록', univs_path, class: 'btn btn-sm btn-outline-dark' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  
+  <div class="alert alert-warning" role="alert" style="margin-top: 50px">
+    <i class="fas fa-exclamation-triangle"></i> 일부 혜택은 지원여부가 다를 수 있습니다! 사실과 다를 시 <%= link_to "운영자에게 메세지 전송", users_message_path, style: "text-decoration: none;" %> 혹은 <%= link_to "kbs4674@naver.com", "mailto:kbs4674@naver.com", style: "text-decoration: none;" %> 으로 제보 주세요!
+  </div>
+  
+  <div style="margin-top: 20px">
+    <button class="accordion">이 모든 혜택은 어떻게 누리나요?</button>
+    <div class="accordion-panel">
+      <div style="padding: 10px;">
+        대부분 대학생 혜택은 대학에서 제공하는 웹메일
+        <%= link_to "이동", "#{@univ.email_url}", class: "badge badge-pill badge-primary", style: "padding-top: 5px", target: "_blank", :data => { :'toggle' => 'tooltip', :'placement' => 'top' }, title: "#{@univ.email_url.truncate(25, omission: '...')}" %>
+        을 통해 대학생 인증을 하시면 됩니다.
+      </div>
+    </div>
+  </div>
+  
+  <script src="/arcodion/arcodion.js"></script>
+  
+  <div class="row">
+    <% if (@univ.etc == true) && (@univ.etc_content != nil) %>
+      <div class="col-md-12" style="margin-top: 30px">
+        <div style="width: 150px; border-bottom: 5px solid gray; margin-bottom: 10px;">기타 특이혜택</div>
+        <%= content_tag(:div, @univ.etc_content.html_safe) %>
+      </div>
+    <% end %>
+    
+    <% if @univ.KOSAF == true %>
+      <% Promotion.where(title: "한국장학재단").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.blue_ladder == true %>
+      <% Promotion.where(title: "파란 사다리").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.korail_youth == true %>
+      <% Promotion.where(title: "코레일 청소년드림").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.ms_office == true %>
+      <% Promotion.where(title: "MS Office").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.naver_music == true %>
+      <% Promotion.where(title: "네이버 뮤직").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.aws_credit_normal == true %>
+      <% Promotion.where(title: "AWS Credit 기본 제공").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.aws_credit_100 == true %>
+      <% Promotion.where(title: "AWS Credit 100달러 제공").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.github == true %>
+      <% Promotion.where(title: "Github").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.jet_brain == true %>
+      <% Promotion.where(title: "Jet Brain").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.Y_goon == true %>
+      <% Promotion.where(title: "YGOON 교육할인스토어").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.job_planet == true %>
+      <% Promotion.where(title: "잡 플래닛").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.win10 == true %>
+      <% Promotion.where(title: "윈도우 10").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.inflearn == true %>
+      <% Promotion.where(title: "인프런").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.edwith == true %>
+      <% Promotion.where(title: "edwith").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.goorm_ide == true %>
+      <% Promotion.where(title: "구름 IDE").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.KFC == true %>
+      <% Promotion.where(title: "KFC").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.adobe == true %>
+      <% Promotion.where(title: "Adobe Creative Cloud").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    
+    <% if @univ.AOC == true %>
+      <% Promotion.where(title: "AOC").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.dbpia == true %>
+      <% Promotion.where(title: "논문 열람 : DBPIA").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.riss == true %>
+      <% Promotion.where(title: "논문 열람 : RISS").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.matlab == true %>
+      <% Promotion.where(title: "Matlab").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.autodesk == true %>
+      <% Promotion.where(title: "Auto Desk").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.samsung_dreamclass == true %>
+      <% Promotion.where(title: "삼성 드림클래스").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.lh == true %>
+      <% Promotion.where(title: "LH 대학생 전세임대주택").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script src="/bootstrap_4.1/bootstrap.min.js"></script>

@@ -1,0 +1,16 @@
+<%# 경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+<%= render 'posts/top_render/alert_normal' %>
+<div class="container">
+  <h1><%#= @bulletin.title %></h1>
+  
+  <%= render 'posts/index/index_normal', post: @post %>
+  
+  <div align="right" style="margin-top: 30px">
+    <div class="d-none d-md-block"><%= render 'searches/search_form_pc', post: @posts.klass %></div>
+    <div class="d-md-none"><%= render 'searches/search_form_mobile', post: @posts.klass %></div>
+  </div>
+  
+  <div style="margin-top: 50px; margin-bottom: 50px;">
+    <%= paginate @posts %>
+  </div>
+</div>

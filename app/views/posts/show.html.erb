@@ -1,0 +1,43 @@
+<%# 경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+<%= render 'posts/top_render/alert_normal_with_hide' %>
+
+<div class="container">
+    <% if @bulletin.opt_email == true %>
+        <%= render 'posts/show/show_issue' %>
+    <% elsif @bulletin.opt_post_vote == true %>
+        <%= render 'posts/show/show_vote' %>
+    <% else %>
+        <%= render 'posts/show/show_normal' %>
+    <% end %>
+    <div class="row" style="margin-top: 50px">
+        <div class="col-3 col-sm-4 col-md-2">
+            <% if (@bulletin.opt_admin_only == true) && (current_user.has_role? :admin) %>
+                <div align="left"><%= link_to '글 쓰기', (@bulletin.present? ? new_bulletin_post_path(@bulletin) : new_post_path), class: 'btn btn-sm btn-primary' %></div>
+            <% elsif (@bulletin.opt_admin_only == false) %>
+            <div align="left"><%= link_to '글 쓰기', (@bulletin.present? ? new_bulletin_post_path(@bulletin) : new_post_path), class: 'btn btn-sm btn-primary' %></div>
+            <% end %>
+        </div>
+        <div align="right" class="col-9 col-sm-8 col-md-10">
+            <% if can? :update, @post %>
+                <%= link_to '수정', (@bulletin.present? ? edit_bulletin_post_path(@bulletin) : edit_post_path(@post)), class: 'btn btn-sm btn-outline-dark' %>
+            <% end %>
+            
+            <% if can? :destroy, @post %>
+                <% if @post.deleted? == true %>
+                    <%= link_to '영구 삭제', (@bulletin.present? ? [@post.bulletin, @post] : @post), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '해당 게시글 삭제 시 이제 DB에서도 기록이 남지 않습니다.' } %>
+                    <%= link_to '복구', bulletin_post_restore_path(@bulletin, @post), method: :post, class: 'btn btn-sm btn-success' %>
+                <% else %>
+                    <%= link_to '삭제', (@bulletin.present? ? [@post.bulletin, @post] : @post), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '정말로 삭제하시겠습니까?' } %>
+                <% end %>
+            <% end %>
+            
+            <%= link_to '목록', (@bulletin.present? ? bulletin_posts_path(@bulletin) : posts_path), class: 'btn btn-sm btn-outline-dark' %>
+        </div>
+    </div>
+    <hr/>
+    <% if @bulletin.opt_comment_vote == true %>
+        <%= render partial: "comments_votable/template", locals: {commentable: @post, new_comment: @comment} %>
+    <% else %>
+        <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
+    <% end %>
+</div>

@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 150px">
+  <p>
+    <strong>혜택명</strong>
+    <%= @promotion.title %>
+  </p>
+  
+  <p>
+    <strong>URL</strong>
+    <%= @promotion.url %>
+  </p>
+  
+  <p>
+    <strong>소개</strong>
+    <%= @promotion.content %>
+  </p>
+  
+  <p>
+    <strong>관련 해시태그</strong>
+    <%= render_with_hashtags(@promotion.univ_hashtag) %>
+  </p>
+  
+  <div align="right">
+    <% if can? :edit, @promotion %>
+      <%= link_to '수정', edit_promotion_path(@promotion), class: 'btn btn-sm btn-outline-dark' %>
+    <% end %>
+    <%= link_to '목록', promotions_path, class: 'btn btn-sm btn-outline-dark' %>
+  </div>
+</div>

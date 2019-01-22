@@ -1,0 +1,9 @@
+<%= render 'promotions/render/show_top_banner' %>
+<% if can? :new, @univs %>
+    <%= render 'promotions/index/index_main' %>
+<% else %>
+    <div align="center" style="margin-top: 200px; margin-bottom: 200px;">
+        <img src="<%= asset_path 'logo.png' %>" width="150px"><br/><br/>
+        해당 페이지는 접근 불가입니다.
+    </div>
+<% end %>

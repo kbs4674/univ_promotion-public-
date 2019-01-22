@@ -1,0 +1,10 @@
+<%= render 'searches/top_render/top_banner' %>
+
+<%= render 'all_notices/top_render/alert_normal' %>
+
+<div class="d-md-none"><%= render 'searches/index/mobile' %></div>
+<div class="d-none d-md-block"><%= render 'searches/index/pc' %></div>
+
+<div style="margin-top: 50px">
+    <%= paginate @searches %>
+</div>

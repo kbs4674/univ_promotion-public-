@@ -1,0 +1,86 @@
+<!-- 메인 배경 with 검색창 -->
+<div class="campus_background main_background_with_img" style="background-image: url('/img/wallpaper.jpg'); background-size: cover;">
+  <img class="d-none d-md-block instructionImg" src="/img/info_background.png">
+    <div class="main_background-black">
+        <div class="container">
+          <%= form_tag(searches_univ_path, method: "get") do %> <%# method를 get방식으로 받아내며, parameter가 /searches/result로 넘어갈 예정. %>
+            <div class="row" id="scrollable-dropdown-menu" style="margin-top: 150px; justify-content: center">
+                
+                <%# 방문자 카운트 %>
+                <% if (user_signed_in?) && (current_user.has_role? :admin) %>
+                  <div class="col-md-12" align="center" style="margin-bottom: 50px; color: white;">
+                    지금까지 총 방문자 수는 <span style="color: #6eff03;"><%= @visit_count_total %></span>명 입니다.
+                  </div>
+                <% end %>
+                <div class="main-univ_search col-9 col-sm-10 col-md-4">
+                  <%= text_field_tag(:search_univ, nil, class: "typeahead input_noborder_white", id: "input_form", placeholder: "대학교 검색", style: "width: 100%; color: white;") %>
+                  
+                  <!-- Typed.js List -->
+                  <div style="border-bottom: 5px solid #18d26e; width: 120%; z-index: 10">
+                    <span id="main_typed" class="typeahead input_noborder_white tt-input" style="color: white; position: relative; vertical-align: top; background-color: transparent;"></span>
+                  </div>
+                </div>
+                
+                <div class="col-3 col-sm-2 col-md-1" style="margin-top: 5px; text-align: left; z-index: 1001;">
+                  <%= submit_tag("&#xf002".html_safe, class: "fas fa-search", style: "color: #18d26e; font-size: 40px; background-color: transparent; border: 0px solid transparent; cursor: pointer") %>
+                </div>
+                <div class="offset-md-2 col-12 col-sm-12 col-md-7" style="margin-top: 5px; text-align: left; color: white;">
+                    <small id="info">대학 검색 후 검색결과 클릭</small>
+                </div>
+                
+                <div id="typed_string">
+                  <p>서울대학교</p>
+                  <p>이화여자대학교</p>
+                  <p>부산대학교</p>
+                  <p>명지대학교</p>
+                  <p>한국항공대학교</p>
+                  <p>성균관대학교</p>
+                  <p>한양대학교</p>
+                  <p>강원대학교</p>
+                </div>
+            </div>
+          <% end %>
+          <div class="d-none d-md-block text_on_image campus_name"></div>
+        </div>
+    </div>
+    <a
+    href="#content"
+    data-offset="100"
+    class="one-page-arrow"
+    style="color: #fff"
+    ><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+</div>
+
+<div id="content" style="margin-bottom: 50px;">
+  <h2 style="margin-top:40px; text-align:center;">대학생이면,<br/> 학교가 협약을 맺었다면 누릴 수 있는 혜택들</h2>
+  <p style="text-align:center; margin:0;">우린 젊으니까!</p>
+  <p style="text-align:center;">#텅_빈_지갑</p>
+    <% if browser.ie? || browser.edge? %>
+      <div align="center" style="margin-top: 100px; margin-bottom: -250px;">
+        <span style="color: #2260ea">익스플로어</span>로 오셨군요!<br/><br/>
+        <img src="<%= asset_path 'icon_chrome.png' %>" width="100px"><br/>
+        저희는 Chrome Browser 접속을 선호합니다!<br/>
+        Chrome으로 접속해서 더 많은 기능을 맛 보세요!
+      </div>
+    <% end %>
+    <div class="tags"></div>
+    <div class="container" id="contents">
+      <% Promotion.all.each do |x| %>
+        <a href="<%= x.url %>" tags="<%= x.univ_hashtag %>" style="text-decoration: none;" target="_blank">
+          <img src="<%= asset_path "main_logo/mini_#{x.thumb}.png" %>">
+        </a>
+      <% end %>
+    </div>
+</div>
+
+<%# 랜덤 메인 배경 %>
+<%= render 'homes/render/random_background' %>
+
+<%# Typeahead Javascript %>
+<script src="/js/typeahead.js"></script>
+
+<%# typed 제어 javascript %>
+<%= render 'homes/render/univ_typed' %>
+
+<%# 해시태그 클릭 시 혜택 분류되서 나열 (지은이 작품) %>
+<script src="/js/tagjs.js"></script>

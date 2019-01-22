@@ -1,0 +1,27 @@
+// Place all the styles related to the univs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.univ-list_box {
+    border-radius: 3px;
+    padding: 20px;
+    margin-top: 30px;
+    transition: all 1s;
+}
+
+.univ-list_box:hover {
+    box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.17);
+    transition: all 1s;
+    border-radius: 3px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.univ-mobile_list_box {
+    text-align: center;
+    width: 95%;
+    box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.17);
+    border-radius: 3px;
+    padding: 20px;
+    margin-top: 30px;
+}

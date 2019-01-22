@@ -1,0 +1,11 @@
+#slider {
+    width: 100%;
+    margin: 0 auto;
+}
+#slider img {
+    display: none;
+    width: 100%;
+    &.show {
+        display: inline;
+    }
+}

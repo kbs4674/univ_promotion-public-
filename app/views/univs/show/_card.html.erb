@@ -1,0 +1,48 @@
+<div class="col-md-4" style="margin-top: 30px">
+    <%= link_to "javascript:void(0)" do %>
+        <div class="image" data-toggle="modal" data-target="#exampleModal-<%= x.id %>">
+            <img style="width: 250px; padding: 20px;" src="<%= asset_path "main_logo/mini_#{x.thumb}.png" %>">
+            <div class="text">
+                <%= x.title %>                                                 
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal-<%= x.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="justify-content: center;">
+                <img style="width: 250px" src="<%= asset_path "main_logo/mini_#{x.thumb}.png" %>">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: fixed; margin: -20px 14rem;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="float: right;">
+                    <% if not (user_signed_in?) %>
+                        <small>좋아요 투표는 로그인 후 가능합니다.<br/></small>
+                    <% else %>
+                        <% if ((current_user.voted_up_on? x) == true) %>
+                            <%= render 'promotions/vote_render/vote_up', x: x %>
+                        <% else %>
+                            <%= render 'promotions/vote_render/vote_cancel', x: x %>
+                        <% end %>
+                        <span style="color: gray"><span class="like_count-<%= x.id %>"><%= x.get_upvotes.size %></span> 명이 좋아합니다!</span>
+                    <% end %>
+                </div><br/>
+                
+                <div style="font-size: 25px; margin-top: 20px; font-weight: bold; color: #9a9a9a"><%= x.title %></div>
+                <% if not (user_signed_in?) %>
+                    <span class="like_count-<%= x.id %>"><%= x.get_upvotes.size %></span> 명이 좋아합니다!</span>
+                <% end %>
+                <div style="font-size: 15px; margin-top: 20px;"><%= x.content %></div>
+                <div style="font-size: 15px; margin-top: 20px;"><%= render_with_hashtags(x.univ_hashtag) %></div>
+            </div>
+            <div class="modal-footer">
+                <%= link_to " 이동", x.url, target: "_blank", class: "fas fa-external-link-alt", style: "color: white; background-color: #2cde7d; padding: 10px; border-radius: 3px; box-shadow: 3px 3px 1px rgba(125, 125, 125, 0.3686274509803922); text-decoration: none;" %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container d-none d-md-block" style="margin-top: 40px;">
+    <% if @searches.empty? %>
+        <div align="center">
+            <h2 class="d-none d-md-block" style="margin-top: 150px"><i class="fas fa-chalkboard-teacher"></i> 검색결과가 없습니다.</h2>
+            <h7><%= link_to " 돌아가기", request.referrer, class: "fas fa-undo" %></h7>
+        </div>
+    <% else %>
+        <% @searches.each do |x| %>
+            <%= link_to univ_path(x), style: "color: black; text-decoration: none" do %>
+                <div class="row univ-list_box">
+                    <div class="col-md-3" style="text-align: center"><img src="<%= asset_path "campus_logo/#{x.img_name}" %>" style="max-width: 150px; max-height: 80px;"></div>
+                    <div class="col-md-9">
+                        <div><span style="font-size: 30px"><%= x.univ_name_kor %></span> <%= x.univ_name_eng %></div>
+                        <div style="margin-top: 10px"><%= x.content.truncate(70, omission: '...') %></div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>

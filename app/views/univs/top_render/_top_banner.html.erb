@@ -1,0 +1,11 @@
+<% if mobile? %>
+  <div class="board_mobile d-md-none">
+    <div class="wow fadeInUp"><%= link_to "대학교 목록", univs_path, class: "board_title" %></div>
+  </div>
+<% else %>
+  <div class="board d-none d-md-block">
+    <div class="container" align="center">
+      <div class="wow fadeInUp"><%= link_to "대학교 목록", univs_path, class: "board_title" %></div>
+    </div>
+  </div>
+<% end %>

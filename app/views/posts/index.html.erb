@@ -1,0 +1,27 @@
+<%# 경고메세지 출력 (아이디, 비밀번호 잘못 칠 시 등등...) %>
+<%= render 'posts/top_render/alert_normal' %>
+
+<div class="container">
+  <h1><%= @bulletin.title %></h1>
+  
+  <% if @bulletin.opt_card_bulletin == true %>
+    <%= render 'posts/index/index_card', post: @posts %>
+  <% else %>
+    <%= render 'posts/index/index_normal', post: @posts %>
+  <% end %>
+  
+  <div align="right" style="margin-top: 30px">
+    <div class="d-none d-md-block"><%= render 'searches/search_form_pc', post: @posts.klass %></div>
+    <div class="d-md-none"><%= render 'searches/search_form_mobile', post: @posts.klass %></div>
+  </div>
+  
+  <div style="margin-top: 50px; margin-bottom: 50px;">
+    <%= paginate @posts %>
+  </div>
+  
+  <% if (@bulletin.opt_admin_only == true) && (current_user.has_role? :admin) %>
+    <div align="right"><%= link_to '글 쓰기', (@bulletin.present? ?  new_bulletin_post_path(@bulletin) : new_post_path), class: 'btn btn-sm btn-primary' %></div>
+  <% elsif (@bulletin.opt_admin_only == false) %>
+    <div align="right"><%= link_to '글 쓰기', (@bulletin.present? ?  new_bulletin_post_path(@bulletin) : new_post_path), class: 'btn btn-sm btn-primary' %></div>
+  <% end %>
+</div>

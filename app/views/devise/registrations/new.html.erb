@@ -1,0 +1,41 @@
+<div class="container devise_form">
+  <div class="row justify-content-md-center mttitle">
+      <div class="col-md-7 bor">
+  <h4 class="mt">회원가입</h4>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div class="field mt">
+      <%= f.label :"이메일" %><br />
+      <%= f.email_field :email, class: "form-control", required: true, autofocus: true, autocomplete: "email" %>
+    </div>
+    
+    <div class="field mt">
+      <%= f.label :"닉네임" %><br />
+      <%= f.text_field :nickname, class: "form-control", required: true, autofocus: true %>
+    </div>
+  
+    <div class="field mt">
+      <%= f.label :"암호" %>
+      <% if @minimum_password_length %>
+      <em>(최소 <%= @minimum_password_length %>글자 이상)</em>
+      <% end %><br />
+      <%= f.password_field :password, class: "form-control", required: true, autocomplete: "off" %>
+    </div>
+  
+    <div class="field mt">
+      <%= f.label :"암호 재 확인" %><br />
+      <%= f.password_field :password_confirmation, class: "form-control", required: true, autocomplete: "off", style: "font-family: sans-serif;" %>
+    </div>
+  
+    <div class="actions mt" style="margin-top: 20px" align="right">
+      <%= f.submit "회원가입", class: "btn btn-sm btn-primary" %>
+    </div>
+  <% end %>
+  </div>
+  </div>
+  <div style="margin-top: 30px" align="center">
+    <%= render "devise/shared/info" %>
+  </div>
+</div>
