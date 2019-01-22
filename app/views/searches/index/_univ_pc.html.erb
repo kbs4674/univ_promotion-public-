@@ -10,7 +10,7 @@
                 <div class="row univ-list_box">
                     <div class="col-md-3" style="text-align: center"><img src="<%= asset_path "campus_logo/#{x.img_name}" %>" style="max-width: 150px; max-height: 80px;"></div>
                     <div class="col-md-9">
-                        <div><span style="font-size: 30px"><%= x.univ_name_kor %></span> <%= x.univ_name_eng %></div>
+                        <div><span style="font-size: 30px"><%= x.univ_name_kor %></span> <%= x.univ_name_eng %> <i class="fas fa-link" style="color: #7ddc4e"></i></div>
                         <div style="margin-top: 10px"><%= x.content.truncate(70, omission: '...') %></div>
                     </div>
                 </div>

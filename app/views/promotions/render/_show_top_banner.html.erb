@@ -3,6 +3,17 @@
     <div class="univ_board_background-black-pc">
         <div class="container" align="center">
             <div class="wow fadeInUp" style="font-size: 50px; color: white; margin-top: 30px;">#<%= params[:name] %></div>
+            <div class="wow fadeInUp" style="font-size: 20px; color: white; margin-top: 10px;"><span style="color: #07fb07"><%= params[:name] %></span> 관련 해시태그 검색결과 입니다.</div>
+        </div>
+    </div>
+</div>
+
+<!-- 모바일 View -->
+<div class="univ_board_background_with_img d-md-none" style="background-image: url('<%= asset_path "campus/campus-normal.jpg" %>')">
+    <div class="univ_board_background-black-mobile">
+        <div class="container" align="center">
+            <div class="wow fadeInUp" style="font-size: 50px; color: white; margin-top: 30px;">#<%= params[:name] %></div>
+            <div class="wow fadeInUp" style="font-size: 15px; color: white;"><span style="color: #07fb07"><%= params[:name] %></span> 관련 해시태그 검색결과 입니다.</div>
         </div>
     </div>
 </div>
