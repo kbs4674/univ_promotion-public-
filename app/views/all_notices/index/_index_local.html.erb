@@ -12,7 +12,7 @@
 </div>
 
 <%# 모바일 뷰 %>
-<div class="d-md-none" style="margin-bottom: 5px;">
+<div class="d-md-none" style="margin-bottom: 5px; margin-top: 10px;">
     <div class="row row_background" style="box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);">
         <%= link_to post, class: "col-10" do %>
             <%= content_tag(:div, post.title.truncate(20, omission: '...'), class: "row etc", style: "padding: 5px; color: black; border-left: 5px solid #c5d7ff;") %>
