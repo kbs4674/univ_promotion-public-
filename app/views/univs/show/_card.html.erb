@@ -39,9 +39,18 @@
                 <% end %>
                 <div style="font-size: 15px; margin-top: 20px;"><%= x.content %></div>
                 <div style="font-size: 15px; margin-top: 20px;"><%= render_with_hashtags(x.univ_hashtag) %></div>
+                
+                <div class="offset-md-8 col-md-4">
+                    <% if can? :edit, @promotion %>
+                        <%= link_to "수정", edit_promotion_path(x), class: 'btn btn-sm btn-outline-dark' %>
+                    <% end %>
+                    <% if can? :edit, @promotion %>
+                        <%= link_to "삭제", x, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '정말로 삭제하시겠습니까?' } %>
+                    <% end %>
+                </div>
             </div>
             <div class="modal-footer">
-                <%= link_to " 이동", x.url, target: "_blank", class: "fas fa-external-link-alt", style: "color: white; background-color: #2cde7d; padding: 10px; border-radius: 3px; box-shadow: 3px 3px 1px rgba(125, 125, 125, 0.3686274509803922); text-decoration: none;" %>
+                <%= link_to " 이동", x.url, target: "_blank", class: "fas fa-external-link-alt promotion_link" %>
             </div>
         </div>
     </div>

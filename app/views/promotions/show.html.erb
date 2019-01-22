@@ -23,6 +23,9 @@
     <% if can? :edit, @promotion %>
       <%= link_to '수정', edit_promotion_path(@promotion), class: 'btn btn-sm btn-outline-dark' %>
     <% end %>
+    <% if can? :edit, @promotion %>
+      <%= link_to "삭제", @promotion, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '정말로 삭제하시겠습니까?' } %>
+    <% end %>
     <%= link_to '목록', promotions_path, class: 'btn btn-sm btn-outline-dark' %>
   </div>
 </div>
