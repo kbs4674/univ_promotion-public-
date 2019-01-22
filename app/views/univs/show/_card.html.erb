@@ -10,12 +10,16 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal-<%= x.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal-<%= x.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 50px">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="justify-content: center;">
                 <img style="width: 250px" src="<%= asset_path "main_logo/mini_#{x.thumb}.png" %>">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: fixed; margin: -20px 14rem;">
+                <button type="button" class="close d-none d-md-block" data-dismiss="modal" aria-label="Close" style="position: fixed; margin: -20px 14rem;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+                <button type="button" class="close d-md-none" data-dismiss="modal" aria-label="Close" style="position: fixed; margin-left: 135px;">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
