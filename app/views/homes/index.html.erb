@@ -4,7 +4,7 @@
     <div class="main_background-black">
         <div class="container">
           <%= form_tag(searches_univ_path, method: "get") do %> <%# method를 get방식으로 받아내며, parameter가 /searches/result로 넘어갈 예정. %>
-            <div class="row" id="scrollable-dropdown-menu" style="margin-top: 150px; justify-content: center">
+            <div class="row" id="scrollable-dropdown-menu" style="margin-top: 150px; justify-content: center;">
                 
                 <%# 방문자 카운트 %>
                 <% if (user_signed_in?) && (current_user.has_role? :admin) %>
@@ -12,16 +12,16 @@
                     지금까지 총 방문자 수는 <span style="color: #6eff03;"><%= @visit_count_total %></span>명 입니다.
                   </div>
                 <% end %>
-                <div class="main-univ_search col-9 col-sm-10 col-md-4">
+                <div class="main-univ_search col-9 col-sm-10 col-md-4" style="z-index: 100;">
                   <%= text_field_tag(:search_univ, nil, class: "typeahead input_noborder_white", id: "input_form", placeholder: "대학교 검색", style: "width: 100%; color: white;") %>
                   
                   <!-- Typed.js List -->
-                  <div style="border-bottom: 5px solid #18d26e; width: 120%; z-index: 10">
+                  <div style="border-bottom: 5px solid #18d26e; width: 125%;">
                     <span id="main_typed" class="typeahead input_noborder_white tt-input" style="color: white; position: relative; vertical-align: top; background-color: transparent;"></span>
                   </div>
                 </div>
                 
-                <div class="col-3 col-sm-2 col-md-1" style="margin-top: 5px; text-align: left; z-index: 1001;">
+                <div class="col-3 col-sm-2 col-md-1" style="margin-top: 5px; text-align: left;">
                   <%= submit_tag("&#xf002".html_safe, class: "fas fa-search", style: "color: #18d26e; font-size: 40px; background-color: transparent; border: 0px solid transparent; cursor: pointer") %>
                 </div>
                 <div class="offset-md-2 col-12 col-sm-12 col-md-7" style="margin-top: 5px; text-align: left; color: white;">
