@@ -9,7 +9,11 @@
             <%= link_to univ_path(x), style: "color: black; text-decoration: none" do %>
                 <div align="center">
                     <div class="row univ-mobile_list_box">
+                        <% if (Rails.application.assets.find_asset "campus/#{x.img_name}.jpg") != nil %>
                         <div class="col-3" style="text-align: center"><img src="<%= asset_path "campus_logo/#{x.img_name}" %>" style="max-width: 70px; max-height: 60px;"></div>
+                        <% else %>
+                        <div class="col-3" style="text-align: center"><img src="<%= x.logo_image %>" style="max-width: 70px; max-height: 60px;"></div>
+                        <% end %>
                         <div class="col-9">
                             <div style="font-size: 20px"><%= x.univ_name_kor %></div>
                             <div style="font-size: 15px"><%= x.univ_name_eng %></div>
