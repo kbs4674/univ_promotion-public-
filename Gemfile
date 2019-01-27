@@ -117,3 +117,6 @@ gem 'omniauth-facebook'
 
 # 구글 연동 로그인
 gem "omniauth-google-oauth2"
+
+# 이미지 삽입
+gem 'carrierwave'

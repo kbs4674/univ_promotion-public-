@@ -12,17 +12,8 @@
         <th>대학명</th>
         <th>대학명(영어)</th>
         <th>혜택 목록</th>
-        <th>Ms office</th>
-        <th>Naver music</th>
-        <th>Aws credit</th>
-        <th>Github</th>
-        <th>Job planet</th>
-        <th>Win10</th>
-        <th>Inflearn</th>
-        <th>Edwith</th>
-        <th>Goorm ide</th>
-        <th>Etc</th>
-        <th colspan="3"></th>
+        <th>기타</th>
+        <th colspan="2"></th>
       </tr>
     </thead>
   
@@ -32,16 +23,7 @@
           <td><%= univ.univ_name_kor %></td>
           <td><%= univ.univ_name_eng %></td>
           <td><%= univ.content %></td>
-          <td><%= univ.ms_office %></td>
-          <td><%= univ.naver_music %></td>
-          <td><%= univ.aws_credit_normal %></td>
-          <td><%= univ.github %></td>
-          <td><%= univ.job_planet %></td>
-          <td><%= univ.win10 %></td>
-          <td><%= univ.inflearn %></td>
-          <td><%= univ.edwith %></td>
-          <td><%= univ.goorm_ide %></td>
-          <td><%= univ.etc %></td>
+          <td><%= univ.etc_content %></td>
           <% if can? :edit, @univs %>
             <td><%= link_to '수정', edit_univ_path(univ) %></td>
           <% end %>

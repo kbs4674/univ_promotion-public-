@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190118154337) do
+ActiveRecord::Schema.define(version: 20190127181942) do
 
   create_table "all_notices", force: :cascade do |t|
     t.string "title"
@@ -269,6 +269,9 @@ ActiveRecord::Schema.define(version: 20190118154337) do
     t.boolean "etc", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "likelion", default: false
+    t.string "banner_image"
+    t.string "logo_image"
   end
 
   create_table "users", force: :cascade do |t|

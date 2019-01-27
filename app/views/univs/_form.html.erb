@@ -33,7 +33,14 @@
   
   <div class="field row">
     <div class="col-md-2"><%= form.label :"대학 이미지 이름(영문)" %></div>
-    <div class="col-md-10"><%= form.text_field :img_name, id: :univ_img_name, class: "input_noborder" %></div>
+    <div class="col-md-10"><%= form.text_field :img_name, id: :univ_img_name, class: "input_noborder", placeholder: "로고/배너 이미지를 업로드 할 경우 비워두세요." %></div>
+  </div>
+  
+  <div class="field row">
+    <div class="col-md-2"><%= form.label :"배너 이미지 파일" %></div>
+    <div class="col-md-4"><%= form.file_field :banner_image %></div>
+    <div class="col-md-2"><%= form.label :"로고 이미지 파일" %></div>
+    <div class="col-md-4"><%= form.file_field :logo_image %></div>
   </div>
 
   <div class="field" style="margin-top: 10px; margin-bottom: 30px;">

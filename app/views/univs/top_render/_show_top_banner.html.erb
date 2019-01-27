@@ -1,12 +1,16 @@
 <!-- PC View -->
 <% if (Rails.application.assets.find_asset "campus/#{univ.img_name}.jpg") != nil %>
 <div class="univ_board_background_with_img d-none d-md-block" style="background-image: url('<%= asset_path "campus/#{univ.img_name}.jpg" %>')">
-<% else %>
-<div class="univ_board_background_with_img d-none d-md-block" style="background-image: url('<%= asset_path "campus/campus-normal.jpg" %>')">
+<% elsif (@univ.banner_image != nil) %>
+<div class="univ_board_background_with_img d-none d-md-block" style="background-image: url('<%= @univ.banner_image %>')">
 <% end %>
     <div class="univ_board_background-black-pc">
         <div class="container" align="center">
+            <% if (Rails.application.assets.find_asset "campus/#{univ.img_name}.jpg") != nil %>
             <div><img style="min-width: 150px; max-width: 200px;" src="<%= asset_path "campus_logo/#{univ.img_name}" %>"></div>
+            <% else %>
+            <div><img style="min-width: 150px; max-width: 200px;" src="<%= @univ.logo_image %>"></div>
+            <% end %>
             <div class="wow fadeInUp" style="font-size: 50px; color: white; margin-top: 30px;"><%= univ.univ_name_kor %></div>
             <div class="wow fadeInUp" style="font-size: 30px; color: white;"><%= univ.univ_name_eng %></div>
             <div style="margin-top: 35px; font-size: 25px; color: white;"><span class="counter" style="font-size: 60px; color: #4bff09"><%= @univs_true.to_i %></span> 개의 혜택을 누려보세요!</div>
@@ -14,16 +18,21 @@
     </div>
 </div>
 
-
 <!-- 모바일 View -->
 <% if (Rails.application.assets.find_asset "campus/#{univ.img_name}.jpg") != nil %>
 <div class="univ_board_background_with_img d-md-none" style="background-image: url('<%= asset_path "campus/#{univ.img_name}.jpg" %>')">
+<% elsif (@univ.banner_image != nil) %>
+<div class="univ_board_background_with_img d-md-none" style="background-image: url('<%= @univ.banner_image %>')">
 <% else %>
 <div class="univ_board_background_with_img d-md-none" style="background-image: url('<%= asset_path "campus/campus-normal.jpg" %>')">
 <% end %>
     <div class="univ_board_background-black-mobile">
         <div class="container" align="center">
+            <% if (Rails.application.assets.find_asset "campus/#{univ.img_name}.jpg") != nil %>
             <div><img style="min-width: 150px; max-width: 150px;" src="<%= asset_path "campus_logo/#{univ.img_name}" %>"></div>
+            <% else %>
+            <div><img style="min-width: 150px; max-width: 150px;" src="<%= @univ.logo_image %>"></div>
+            <% end %>
             <div class="wow fadeInUp" style="font-size: 25px; color: white; margin-top: 30px;"><%= univ.univ_name_kor %></div>
             <div class="wow fadeInUp" style="font-size: 15px; color: white;"><%= univ.univ_name_eng %></div>
             <div style="margin-top: 35px; font-size: 15px; color: white;"><span class="counter" style="font-size: 30px; color: #4bff09"><%= @univs_true.to_i %></span> 개의 혜택을 누려보세요!</div>

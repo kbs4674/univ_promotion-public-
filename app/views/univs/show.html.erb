@@ -9,6 +9,9 @@
         <% if can? :destroy, @univ %>
           <%= link_to '삭제', @univ, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '정말로 삭제하시겠습니까?' } %>
         <% end %>
+        <% if can? :new, @univ %>
+          <%= link_to '대학 추가', new_univ_path, class: 'btn btn-sm btn-outline-dark' %>
+        <% end %>
         <% if can? :edit, @univ %>
           <%= link_to '수정', edit_univ_path(@univ), class: 'btn btn-sm btn-outline-dark' %>
         <% end %>
