@@ -8,10 +8,10 @@
         <% @searches.each do |x| %>
             <%= link_to univ_path(x), style: "color: black; text-decoration: none" do %>
                 <div class="row univ-list_box">
-                    <% if (Rails.application.assets.find_asset "campus/#{x.img_name}.jpg") != nil %>
-                    <div class="col-md-3" style="text-align: center"><img src="<%= asset_path "campus_logo/#{x.img_name}" %>" style="max-width: 150px; max-height: 80px;"></div>
-                    <% else %>
+                    <% if x.logo_image.present? %>
                     <div class="col-md-3" style="text-align: center"><img src="<%= x.logo_image %>" style="max-width: 150px; max-height: 80px;"></div>
+                    <% elsif (Rails.application.assets.find_asset "campus/#{x.img_name}.jpg") != nil %>
+                    <div class="col-md-3" style="text-align: center"><img src="<%= asset_path "campus_logo/#{x.img_name}" %>" style="max-width: 150px; max-height: 80px;"></div>
                     <% end %>
                     <div class="col-md-9">
                         <div><span style="font-size: 30px"><%= x.univ_name_kor %></span> <%= x.univ_name_eng %> <i class="fas fa-link" style="color: #7ddc4e"></i></div>
