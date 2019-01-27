@@ -10,7 +10,7 @@
                 <div class="row univ-list_box">
                     <% if x.logo_image.present? %>
                     <div class="col-md-3" style="text-align: center"><img src="<%= x.logo_image %>" style="max-width: 150px; max-height: 80px;"></div>
-                    <% elsif (Rails.application.assets.find_asset "campus/#{x.img_name}.jpg") != nil %>
+                    <% elsif (Rails.application.assets.find_asset "campus_logo/#{x.img_name}.png") != nil %>
                     <div class="col-md-3" style="text-align: center"><img src="<%= asset_path "campus_logo/#{x.img_name}" %>" style="max-width: 150px; max-height: 80px;"></div>
                     <% end %>
                     <div class="col-md-9">
