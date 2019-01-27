@@ -45,7 +45,7 @@
 
   <div class="field" style="margin-top: 10px; margin-bottom: 30px;">
     <%= tinymce :language => "en" %>
-    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10" %>
+    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", value: "한국장학재단 : 국가장학금, Adobe 소프트웨어 패키지, 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택, DBPIA, RISS, MS Office, 네이버 뮤직 1년 할인, AWS Credit, Github, Jet Brain, YGOON 대학생 복지몰 교육할인스토어" %>
   </div>
   
   
@@ -78,7 +78,7 @@
   
   <div class="field row">
     <div class="col-md-12"><%= form.label :"기타 혜택('기타' 체크 필수)" %></div>
-    <div class="col-md-12"><%= form.text_area :etc_content, id: :univ_etc_content, class: "form-control tinymce" %></div>
+    <div class="col-md-12"><%= form.text_area :etc_content, id: :univ_etc_content, class: "form-control tinymce", rows: 10 %></div>
   </div>
 
   <div class="actions" align="center" style="margin-top: 30px">
