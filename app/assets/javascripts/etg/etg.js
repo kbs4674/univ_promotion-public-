@@ -16,7 +16,7 @@ if (char.sort().toString() == e1.sort().toString() || char.sort().toString() == 
     $(".trg").css("width", "100%");
     $(".trg").css("height", "100%");
     $(".trg").css("z-index", "5000000");
-    $(".trg").css("margin-top", "-2100px");
+    $(".trg").css("margin-top", "-2205px");
     $(".trg").fadeIn();
     setTimeout(function() {
         $(".trg").fadeOut();
