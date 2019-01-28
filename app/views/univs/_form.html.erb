@@ -75,12 +75,11 @@
       <div><%= form.label :inflearn %> <%= form.check_box :inflearn, id: :univ_inflearn %></div>
       <div><%= form.label :edwith %> <%= form.check_box :edwith, id: :univ_edwith %></div>
       <div><%= form.label :goorm_ide %> <%= form.check_box :goorm_ide, id: :univ_goorm_ide %></div>
-      <div><%= form.label :"기타" %> <%= form.check_box :etc, id: :univ_etc %></div>
     </div>
   </div>
   
   <div class="field row">
-    <div class="col-md-12"><%= form.label :"기타 혜택('기타' 체크 필수)" %></div>
+    <div class="col-md-12"><%= form.check_box :etc, id: :univ_etc_content %> <%= form.label :"기타 혜택(체크 필수)" %></div>
     <div class="col-md-12"><%= form.text_area :etc_content, id: :univ_etc_content, class: "form-control tinymce", rows: 10 %></div>
   </div>
 
