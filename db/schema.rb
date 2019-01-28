@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190127181942) do
+ActiveRecord::Schema.define(version: 20190128053529) do
 
   create_table "all_notices", force: :cascade do |t|
     t.string "title"
@@ -250,9 +250,10 @@ ActiveRecord::Schema.define(version: 20190127181942) do
     t.boolean "jet_brain", default: true
     t.boolean "Y_goon", default: true
     t.boolean "adobe", default: true
-    t.boolean "dbpia", default: true
-    t.boolean "riss", default: true
-    t.boolean "aws_credit_100", default: false
+    t.boolean "dbpia"
+    t.boolean "dcollection"
+    t.boolean "riss"
+    t.boolean "aws_credit_100"
     t.boolean "job_planet", default: false
     t.boolean "win10", default: false
     t.boolean "inflearn", default: false
@@ -261,17 +262,17 @@ ActiveRecord::Schema.define(version: 20190127181942) do
     t.boolean "KFC", default: false
     t.boolean "AOC", default: false
     t.boolean "blue_ladder", default: false
-    t.boolean "matlab", default: true
-    t.boolean "autodesk", default: true
+    t.boolean "matlab"
+    t.boolean "autodesk"
     t.boolean "samsung_dreamclass", default: true
     t.boolean "korail_youth", default: true
     t.boolean "lh", default: true
     t.boolean "etc", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "likelion", default: false
     t.string "banner_image"
     t.string "logo_image"
+    t.boolean "software"
   end
 
   create_table "users", force: :cascade do |t|

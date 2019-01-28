@@ -59,6 +59,12 @@
       <% end %>
     <% end %>
     
+    <% if @univ.software == true %>
+      <% Promotion.where(title: "소프트웨어 중심대학").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
     <% if @univ.korail_youth == true %>
       <% Promotion.where(title: "코레일 청소년드림").each do |x| %>
         <%= render 'univs/show/card', x: x %>

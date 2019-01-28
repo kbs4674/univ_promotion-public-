@@ -45,7 +45,7 @@
 
   <div class="field" style="margin-top: 10px; margin-bottom: 30px;">
     <%= tinymce :language => "en" %>
-    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", value: "한국장학재단 : 국가장학금, Adobe 소프트웨어 패키지, 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택, DBPIA, RISS, MS Office, 네이버 뮤직 1년 할인, AWS Credit, Github, Jet Brain, YGOON 대학생 복지몰 교육할인스토어" %>
+    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", value: "한국장학재단 : 국가장학금, Adobe 소프트웨어 패키지, 매트랩, 오토데스크, 삼성 드림클래스, 소프트웨어 중심대학, 코레일 청소년드림, LH 대학생 전세임대주택 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택, DBPIA, RISS, MS Office, 네이버 뮤직 1년 할인, AWS Credit, Github, Jet Brain, YGOON 대학생 복지몰 교육할인스토어" %>
   </div>
   
   
@@ -61,6 +61,7 @@
       <div><%= form.label :"KFC" %> <%= form.check_box :KFC, id: :univ_KFC %></div>
       <div><%= form.label :"AOC" %> <%= form.check_box :AOC, id: :univ_AOC %></div>
       <div><%= form.label :adobe %> <%= form.check_box :adobe, id: :univ_adobe %></div>
+      <div><%= form.label :"소프트웨어 중심대학" %> <%= form.check_box :software, id: :univ_software %></div>
     </div>
     <div class="col-md-6">
       <div><%= form.label :"한국장학재단" %> <%= form.check_box :KOSAF, id: :univ_KOSAF %></div>
