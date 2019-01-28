@@ -3,6 +3,9 @@
         <div align="center">
             <h2 class="d-none d-md-block" style="margin-top: 150px"><i class="fas fa-chalkboard-teacher"></i> 검색결과가 없습니다.</h2>
             <h7><%= link_to " 돌아가기", request.referrer, class: "fas fa-undo" %></h7>
+            <% if (user_signed_in?) && (current_user.has_role? :admin) %>
+                <span style="margin-left: 15px"><%= link_to ' 대학 추가', new_univ_path, class: "fas fa-graduation-cap" %></span>
+            <% end %>
         </div>
     <% else %>
         <% @searches.each do |x| %>
