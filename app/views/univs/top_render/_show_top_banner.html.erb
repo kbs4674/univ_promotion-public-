@@ -30,7 +30,7 @@
 <% end %>
     <div class="univ_board_background-black-mobile">
         <div class="container" align="center">
-            <% if (univ.banner_image.present?) %>
+            <% if (univ.logo_image.present?) %>
             <div><img style="min-width: 150px; max-width: 150px;" src="<%= @univ.logo_image %>"></div>
             <% elsif (Rails.application.assets.find_asset "campus_logo/#{univ.img_name}.png") != nil %>
             <div><img style="min-width: 150px; max-width: 150px;" src="<%= asset_path "campus_logo/#{univ.img_name}" %>"></div>
