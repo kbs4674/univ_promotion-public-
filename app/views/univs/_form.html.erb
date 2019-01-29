@@ -45,40 +45,53 @@
 
   <div class="field" style="margin-top: 10px; margin-bottom: 30px;">
     <%= tinymce :language => "en" %>
-    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", value: "한국장학재단 : 국가장학금, Adobe 소프트웨어 패키지, 매트랩, 오토데스크, 삼성 드림클래스, 소프트웨어 중심대학, 코레일 청소년드림, LH 대학생 전세임대주택 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택, DBPIA, RISS, MS Office, 네이버 뮤직 1년 할인, AWS Credit, Github, Jet Brain, YGOON 대학생 복지몰 교육할인스토어" %>
+    <span>한국장학재단 : 국가장학금, Adobe 소프트웨어 패키지, 매트랩, 오토데스크, 삼성 드림클래스, 소프트웨어 중심대학, 코레일 청소년드림, LH 대학생 전세임대주택 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택, DBPIA, RISS, MS Office, 네이버 뮤직 1년 할인, AWS Credit, Github, Jet Brain, YGOON 대학생 복지몰 교육할인스토어</span>
+    <hr/>
+    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", id: "univ-content" %>
   </div>
   
   
-  <div class="row">
+  <div class="row select_option">
     <div class="col-md-6">
-      <div><%= form.label :ms_office %> <%= form.check_box :ms_office, id: :univ_ms_office %></div>
-      <div><%= form.label :naver_music %> <%= form.check_box :naver_music, id: :univ_naver_music %></div>
-      <div><%= form.label :aws_credit_normal %> <%= form.check_box :aws_credit_normal, id: :univ_aws_credit_normal %></div>
-      <div><%= form.label :aws_credit_100 %> <%= form.check_box :aws_credit_100, id: :univ_aws_credit_100 %></div>
-      <div><%= form.label :github %> <%= form.check_box :github, id: :univ_github %></div>
-      <div><%= form.label :jet_brain %> <%= form.check_box :jet_brain, id: :univ_jet_brain %></div>
-      <div><%= form.label :Y_goon %> <%= form.check_box :Y_goon, id: :univ_Y_goon %></div>
-      <div><%= form.label :"KFC" %> <%= form.check_box :KFC, id: :univ_KFC %></div>
-      <div><%= form.label :"AOC" %> <%= form.check_box :AOC, id: :univ_AOC %></div>
-      <div><%= form.label :adobe %> <%= form.check_box :adobe, id: :univ_adobe %></div>
-      <div><%= form.label :"소프트웨어 중심대학" %> <%= form.check_box :software, id: :univ_software %></div>
-      <div><%= form.label :"삼성 드림클래스" %> <%= form.check_box :samsung_dreamclass, id: :univ_samsung_dreamclass %></div>
+      <div><%= form.label :ms_office %> <%= form.check_box :ms_office, id: :univ_ms_office, placeholder: "MS Office" %></div>
+      <div><%= form.label :naver_music %> <%= form.check_box :naver_music, id: :univ_naver_music, placeholder: "네이버 뮤직 1년 할인" %></div>
+      <div><%= form.label :aws_credit_normal %> <%= form.check_box :aws_credit_normal, id: :univ_aws_credit_normal, placeholder: "AWS Credit" %></div>
+      <div><%= form.label :aws_credit_100 %> <%= form.check_box :aws_credit_100, id: :univ_aws_credit_100, placeholder: "AWS 100달러 Credit" %></div>
+      <div><%= form.label :github %> <%= form.check_box :github, id: :univ_github, placeholder: "Github" %></div>
+      <div><%= form.label :jet_brain %> <%= form.check_box :jet_brain, id: :univ_jet_brain, placeholder: "Jet Brain" %></div>
+      <div><%= form.label :Y_goon %> <%= form.check_box :Y_goon, id: :univ_Y_goon, placeholder: "YGOON 대학생 복지몰 교육할인스토어" %></div>
+      <div><%= form.label :"KFC" %> <%= form.check_box :KFC, id: :univ_KFC, placeholder: "KFC" %></div>
+      <div><%= form.label :"AOC" %> <%= form.check_box :AOC, id: :univ_AOC, placeholder: "AOC(애플 스토어 할인)" %></div>
+      <div><%= form.label :adobe %> <%= form.check_box :adobe, id: :univ_adobe, placeholder: "Adobe 소프트웨어 패키지" %></div>
+      <div><%= form.label :"소프트웨어 중심대학" %> <%= form.check_box :software, id: :univ_software, placeholder: "소프트웨어 중심대학" %></div>
+      <div><%= form.label :"삼성 드림클래스" %> <%= form.check_box :samsung_dreamclass, id: :univ_samsung_dreamclass, placeholder: "삼성 드림클래스" %></div>
     </div>
     <div class="col-md-6">
-      <div><%= form.label :"한국장학재단" %> <%= form.check_box :KOSAF, id: :univ_KOSAF %></div>
-      <div><%= form.label :"파란사다리" %> <%= form.check_box :blue_ladder, id: :univ_blue_ladder %></div>
-      <div><%= form.label :"무료 논문 열람 : DBPIA" %> <%= form.check_box :dbpia, id: :univ_dbpia %></div>
-      <div><%= form.label :"무료 논문 열람 : RISS" %> <%= form.check_box :riss, id: :univ_riss %></div>
-      <div><%= form.label :"Matlab" %> <%= form.check_box :matlab, id: :univ_matlab %></div>
-      <div><%= form.label :"Auto Desk" %> <%= form.check_box :autodesk, id: :univ_autodesk %></div>
-      <div><%= form.label :"LH 주택청약" %> <%= form.check_box :lh, id: :univ_lh %></div>
-      <div><%= form.label :job_planet %> <%= form.check_box :job_planet, id: :univ_job_planet %></div>
-      <div><%= form.label :win10 %> <%= form.check_box :win10, id: :univ_win10 %></div>
-      <div><%= form.label :inflearn %> <%= form.check_box :inflearn, id: :univ_inflearn %></div>
-      <div><%= form.label :edwith %> <%= form.check_box :edwith, id: :univ_edwith %></div>
-      <div><%= form.label :goorm_ide %> <%= form.check_box :goorm_ide, id: :univ_goorm_ide %></div>
+      <div><%= form.label :"한국장학재단" %> <%= form.check_box :KOSAF, id: :univ_KOSAF, placeholder: "한국장학재단 : 국가장학금" %></div>
+      <div><%= form.label :"파란사다리" %> <%= form.check_box :blue_ladder, id: :univ_blue_ladder, placeholder: "단기 어학연수 장학 사업 : 파란사다리" %></div>
+      <div><%= form.label :"무료 논문 열람 : DBPIA" %> <%= form.check_box :dbpia, id: :univ_dbpia, placeholder: "DBPIA" %></div>
+      <div><%= form.label :"무료 논문 열람 : RISS" %> <%= form.check_box :riss, id: :univ_riss, placeholder: "RISS" %></div>
+      <div><%= form.label :"Matlab" %> <%= form.check_box :matlab, id: :univ_matlab, placeholder: "매트랩(Matlab)" %></div>
+      <div><%= form.label :"Auto Desk" %> <%= form.check_box :autodesk, id: :univ_autodesk, placeholder: "오토데스크 (Auto Desk)" %></div>
+      <div><%= form.label :"LH 주택청약" %> <%= form.check_box :lh, id: :univ_lh, placeholder: "LH 대학생 전세임대주택" %></div>
+      <div><%= form.label :job_planet %> <%= form.check_box :job_planet, id: :univ_job_planet, placeholder: "잡플래닛 무료열람" %></div>
+      <div><%= form.label :win10 %> <%= form.check_box :win10, id: :univ_win10, placeholder: "윈도우 10(Window 10) Edu" %></div>
+      <div><%= form.label :inflearn %> <%= form.check_box :inflearn, id: :univ_inflearn, placeholder: "인프런(Inflearn) : IT 교육 플랫폼" %></div>
+      <div><%= form.label :edwith %> <%= form.check_box :edwith, id: :univ_edwith, placeholder: "Ediwith : IT 교육플랫폼" %></div>
+      <div><%= form.label :goorm_ide %> <%= form.check_box :goorm_ide, id: :univ_goorm_ide, placeholder: "구름 IDE : 클라우드 IDE" %></div>
     </div>
   </div>
+  
+  <script>
+    var checkboxes = $(".select_option > div > div > input[type='checkbox']");
+    checkboxes.on('change', function() {
+      $('#univ-content').val(
+        checkboxes.filter(':checked').map(function(item) {
+          return this.placeholder;
+        }).get().join(', ')
+      );
+    });
+  </script>
   
   <div class="field row">
     <div class="col-md-12"><%= form.check_box :etc, id: :univ_etc_content %> <%= form.label :"기타 혜택(체크 필수)" %></div>
