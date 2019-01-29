@@ -42,7 +42,7 @@
   <div class="row">
     <% if (@univ.etc == true) && (@univ.etc_content != nil) %>
       <div class="col-md-12" style="margin-top: 30px">
-        <div style="width: 150px; border-bottom: 5px solid gray; margin-bottom: 10px;">기타 특이혜택</div>
+        <div class="etc_promotion">기타 특이혜택</div>
         <%= content_tag(:div, @univ.etc_content.html_safe) %>
       </div>
     <% end %>

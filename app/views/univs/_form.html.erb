@@ -45,12 +45,10 @@
 
   <div class="field" style="margin-top: 10px; margin-bottom: 30px;">
     <%= tinymce :language => "en" %>
-    <span>한국장학재단 : 국가장학금, Adobe 소프트웨어 패키지, 매트랩, 오토데스크, 삼성 드림클래스, 소프트웨어 중심대학, 코레일 청소년드림, LH 대학생 전세임대주택 매트랩, 오토데스크 소프트웨어, 삼성 드림클래스, 코레일 청소년드림, LH 대학생 전세임대주택, DBPIA, RISS, MS Office, 네이버 뮤직 1년 할인, AWS Credit, Github, Jet Brain, YGOON 대학생 복지몰 교육할인스토어</span>
-    <hr/>
-    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", id: "univ-content" %>
+    <%= form.text_area :content, id: :univ_content, class: "form-control", rows: "10", id: "univ-content", placeholder: "하단 혜택 체크박스를 클릭하면 자동으로 여기에 내용이 들어갑니다." %>
   </div>
   
-  
+  <div class="form_option">혜택</div>
   <div class="row select_option">
     <div class="col-md-6">
       <div><%= form.label :ms_office %> <%= form.check_box :ms_office, id: :univ_ms_office, placeholder: "MS Office" %></div>
@@ -82,17 +80,6 @@
     </div>
   </div>
   
-  <script>
-    var checkboxes = $(".select_option > div > div > input[type='checkbox']");
-    checkboxes.on('change', function() {
-      $('#univ-content').val(
-        checkboxes.filter(':checked').map(function(item) {
-          return this.placeholder;
-        }).get().join(', ')
-      );
-    });
-  </script>
-  
   <div class="field row">
     <div class="col-md-12"><%= form.check_box :etc, id: :univ_etc_content %> <%= form.label :"기타 혜택(체크 필수)" %></div>
     <div class="col-md-12"><%= form.text_area :etc_content, id: :univ_etc_content, class: "form-control tinymce", rows: 10 %></div>
@@ -103,3 +90,6 @@
     <%= link_to '목록', univs_path, class: "btn btn-sm btn-dark"  %>
   </div>
 <% end %>
+
+<!-- 혜택 클릭 이벤트 js -->
+<script src="/js/select_promotion.js"></script>
