@@ -53,6 +53,18 @@
       <% end %>
     <% end %>
     
+    <% if @univ.everytime == true %>
+      <% Promotion.where(title: "에브리타임").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
+    <% if @univ.dreamspon == true %>
+      <% Promotion.where(title: "드림스폰").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
     <% if @univ.blue_ladder == true %>
       <% Promotion.where(title: "파란 사다리").each do |x| %>
         <%= render 'univs/show/card', x: x %>

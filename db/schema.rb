@@ -267,7 +267,7 @@ ActiveRecord::Schema.define(version: 20190128053529) do
     t.boolean "korail_youth", default: true
     t.boolean "lh", default: true
     t.boolean "dreamspon", default: true
-    t.boolean "everytime", default: true
+    t.boolean "everytime", default: false
     t.boolean "etc", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
