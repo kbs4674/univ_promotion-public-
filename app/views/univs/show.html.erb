@@ -77,12 +77,6 @@
       <% end %>
     <% end %>
     
-    <% if @univ.naver_music == true %>
-      <% Promotion.where(title: "네이버 뮤직").each do |x| %>
-        <%= render 'univs/show/card', x: x %>
-      <% end %>
-    <% end %>
-    
     <% if @univ.aws_credit_normal == true %>
       <% Promotion.where(title: "AWS Credit 기본 제공").each do |x| %>
         <%= render 'univs/show/card', x: x %>

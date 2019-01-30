@@ -244,7 +244,6 @@ ActiveRecord::Schema.define(version: 20190128053529) do
     t.text "etc_content"
     t.boolean "KOSAF", default: true
     t.boolean "ms_office", default: true
-    t.boolean "naver_music", default: true
     t.boolean "aws_credit_normal", default: true
     t.boolean "github", default: true
     t.boolean "jet_brain", default: true
@@ -267,6 +266,8 @@ ActiveRecord::Schema.define(version: 20190128053529) do
     t.boolean "samsung_dreamclass", default: true
     t.boolean "korail_youth", default: true
     t.boolean "lh", default: true
+    t.boolean "dreamspon", default: true
+    t.boolean "everytime", default: true
     t.boolean "etc", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

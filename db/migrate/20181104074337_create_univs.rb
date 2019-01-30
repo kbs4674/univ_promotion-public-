@@ -10,7 +10,6 @@ class CreateUnivs < ActiveRecord::Migration[5.1]
       t.text :etc_content # 기타 내용
       t.boolean :KOSAF, default: true # 한국장학재단 [http://www.kosaf.go.kr/]
       t.boolean :ms_office, default: true # MS OFFICE [https://products.office.com/ko-kr/student/office-in-education]
-      t.boolean :naver_music, default: true # 네이버 뮤직 1년 50% 할인권 [https://music.naver.com/buy/index.nhn?list=college]
       t.boolean :aws_credit_normal, default: true # AWS Credit [https://aws.amazon.com/ko/education/awseducate/]
       t.boolean :github, default: true # Github 외 개발 Tool 사이트 학생혜택(Github School Pack) [https://education.github.com/pack]
       t.boolean :jet_brain, default: true # IDE 개발툴 학생 무료지원 [https://www.jetbrains.com/]
@@ -33,6 +32,8 @@ class CreateUnivs < ActiveRecord::Migration[5.1]
       t.boolean :samsung_dreamclass, default: true # 삼성 드림클래스 [https://www.dreamclass.org/index.do]
       t.boolean :korail_youth, default: true # 청소년 드림(코레일 KTX 30% 할인) [http://www.letskorail.com/]
       t.boolean :lh, default: true # LH 대학생 전세임대주택 : 대학생 및 취업준비생들을 대상으로 시행하는 제도로, 전세금 지원
+      t.boolean :dreamspon, default: true # 드림스폰 [http://www.dreamspon.com/]
+      t.boolean :everytime, default: false # 에브리타임 [http://everytime.kr]
       t.boolean :etc, default: false # 기타
 
       t.timestamps
