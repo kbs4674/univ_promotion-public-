@@ -1,9 +1,9 @@
 const tags_container = document.querySelector(".tags");
 const contents_container = document.querySelector("#contents");
 
-tags = []
-uniq_tags = []
-selected_tags = []
+tags = [];
+uniq_tags = [];
+selected_tags = [];
 contents = Array.from(contents_container.children);
 
 $(document).ready(function() {
@@ -48,12 +48,16 @@ $(document).ready(function() {
                         selected_tags.forEach(s_tag => {
                             if (!c_tags.includes(s_tag)) {
                                 c.classList.remove("select");
-                            } 
+                                $("#none_select").css("display", "none");
+                            }
                         });
                     })
                 } else {
                     contents.forEach(c => {
                         c.classList.remove("select");
+                        if (c.classList == 0) {
+                            $("#none_select").css("display", "block");
+                        }
                     })
                 }
             }

@@ -1,49 +1,55 @@
 <!-- 경덕 & 종우 작품 -->
+<div class="d-none d-md-block" style="margin-top: 200px"></div>
 
 <div class="container login_main">
   <div class="container devise_form">
   
     <div class="row justify-content-md-center mttitle">
     <div class="col-md-7 bor">
-      <h4 class="mt">로그인</h4>
       
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <% if alert %>
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <%= alert %>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        <% elsif notice %>
-          <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <%= notice %>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <div class="offset-1">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <% if alert %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-top: 20px">
+              <%= alert %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
+              </button>
+            </div>
+          <% elsif notice %>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+              <%= notice %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+          
+          <div class="col-md-12" style="margin-top: 30px; margin-left: -10px;">
+            <label class="form_1">
+              <%= f.email_field :email, id: "form_1", autofocus: true, autocomplete: "email", placeholder: " ", required: true %>
+              <span class="label">이메일</span>
+            </label>
           </div>
-        <% end %>
-        
-        <div class="field mt">
-          <%= f.label :"이메일" %><br />
-          <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
-        </div>
-        
-        <div class="field mt">
-          <%= f.label :"암호" %><br />
-          <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "off" %>
-        </div>
-        
-        <% if devise_mapping.rememberable? -%>
-          <div class="field mt" align="right">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+          
+          <div class="col-md-12" style="margin-top: 30px; margin-left: -10px;">
+            <label class="form_2">
+              <%= f.password_field :password, class: "devise_noborder", id: "form_2", autofocus: true, autocomplete: "off", placeholder: " ", required: true, style: "font-family: nanum-gothic" %>
+              <span class="label">암호</span>
+            </label>
           </div>
-        <% end -%>
+          
+          <% if devise_mapping.rememberable? -%>
+            <div class="field mt" align="right">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+        </div>
         
         <div class="container row" style="justify-content: center;">
-          <div>
-            <%= f.submit "로그인", class: "btn btn-sm btn-info" %>
+          <div style="margin-left: 30px;">
+            <%= f.submit "로그인", class: "btn btn btn-info" %>
           </div>
         </div>
         
@@ -53,15 +59,10 @@
         <div align="center" style="margin-bottom: 10px;">
           <%- resource_class.omniauth_providers.each do |provider| %>
             <% if provider.to_s == "naver" %>
-                <%= link_to "네이버 아이디 로그인", omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #00C73C; color: white" %>
+                <%= link_to "#{image_tag "#{asset_path('white-naver.png')}", style: "width: 15px; padding-top: 2px" } 네이버 아이디 로그인".html_safe, omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #00C73C; color: white" %>
             <% end %>
-            <!--<#% if provider.to_s == "facebook" %>-->
-            <!--  <div class="col-5 col-md-3">-->
-            <!--    <#%= link_to "페이스북 아이디 로그인", omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #2851a3; color: white" %>-->
-            <!--  </div>-->
-            <!--<#% end %>-->
             <% if provider.to_s == "google_oauth2" %>
-                <%= link_to "구글 아이디 로그인", omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #ff422f; color: white" %>
+                <%= link_to "#{image_tag "#{asset_path('white-google.png')}", style: "width: 15px; padding-top: 2px" } 구글 아이디 로그인".html_safe, omniauth_authorize_path(resource_name, provider), class: "btn btn-sm", style: "background-color: #ff422f; color: white" %>
             <% end %>
           <% end -%>
         </div>

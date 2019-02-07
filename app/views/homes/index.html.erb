@@ -84,8 +84,18 @@
 
 <%# 해시태그 클릭 시 혜택 분류되서 나열 (지은이 작품) %>
 <script src="/js/tagjs.js"></script>
+<div id="none_select" class="container" style="text-align: center; display: none; margin-top: -300px">
+  <div class="wow bounce" data-wow-iteration="infinite"><i class="fas fa-hand-point-up" style="font-size: 40px;"></i></div>
+  <div style="margin-top: 20px; font-size: 20px">원하시는 조건의 태그를<br/>1개 이상 클릭해보세요.</div>
+</div>
 
 <div class="trg" style="display: none" id="lkn"></div>
 
 <!-- 키보드에서 "DAMDA" 를 입력하면 좋은 일이 생길거야!♡ -->
 <!-- Press "DAMDA" TO GET LUCK!♡ -->
+
+<style>
+  .wow {
+    visibility: visible !important
+  }
+</style>
