@@ -65,7 +65,7 @@ $(document).ready(function() {
         tags_container.children[0].click();
         },
         error : function(xhr, status, error) {
-            alert("에러발생");
+            alert("에러발생 ");
         }
     });
 });
