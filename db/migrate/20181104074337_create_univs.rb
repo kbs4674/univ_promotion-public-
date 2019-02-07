@@ -26,8 +26,8 @@ class CreateUnivs < ActiveRecord::Migration[5.1]
       t.boolean :goorm_ide, default: false # 구름IDE : 클라우드 IDE (C9같은거)
       t.boolean :KFC, default: false # 중앙대 KFC 10% 할인
       t.boolean :AOC, default: false # 애플 스토어 할인 [https://www.apple.com/kr/shop/browse/home/aoc]
-      t.boolean :blue_ladder, default: false # 한국 장학재단에서 지원하는 파란 사다리 장학사업(500만원 상당의 1개월 단기 어학연수 지원) [http://news.khan.co.kr/kh_news/khan_art_view.html?art_id=201802141118001]
-      t.boolean :matlab # 매트랩 무료 [https://kr.mathworks.com/academia/student_version.html?s_tid=acport_sv_sp_cta1]
+      t.boolean :blue_ladder, default: false # 한국 장학재단에서 지원하는 파란 사다리 장학사업(500만원 상당의 1개월 단기 어학연수 지원) [http://www.kosaf.go.kr/ko/mkinfo.do?pg=blueladder&ttab1=2]
+      t.boolean :matlab # 매트랩 무료 [https://m.blog.naver.com/matlablove/221180360031, https://kr.mathworks.com/academia/student_version.html?s_tid=acport_sv_sp_cta1]
       t.boolean :autodesk # 오토캐드, 마야 등 오토데스크 브랜드에서 취급하는 소프트웨어 무료 [https://www.autodesk.co.kr/education/free-educational-software]
       t.boolean :samsung_dreamclass, default: true # 삼성 드림클래스 [https://www.dreamclass.org/index.do]
       t.boolean :korail_youth, default: true # 청소년 드림(코레일 KTX 30% 할인) [http://www.letskorail.com/]
