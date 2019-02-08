@@ -25,6 +25,10 @@ class UnivsController < ApplicationController
       @univs_true += 1
     end
     
+    if @univ.teps == true
+      @univs_true += 1
+    end
+    
     if @univ.dbpia == true
       @univs_true += 1
     end
@@ -183,6 +187,6 @@ class UnivsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def univ_params
-      params.require(:univ).permit(:univ_name_kor, :univ_name_eng, :univ_nickname, :banner_image, :logo_image, :img_name, :email_url, :content, :etc_content, :KOSAF, :blue_ladder, :dbpia, :riss, :ms_office, :aws_credit_normal, :aws_credit_100, :github, :jet_brain, :job_planet, :win10, :inflearn, :edwith, :goorm_ide, :KFC, :adobe, :AOC, :Y_goon, :etc, :etc_content, :matlab, :samsung_dreamclass, :korail_youth, :lh, :software, :autodesk, :dreamspon, :everytime)
+      params.require(:univ).permit(:univ_name_kor, :univ_name_eng, :univ_nickname, :banner_image, :logo_image, :img_name, :email_url, :content, :etc_content, :KOSAF, :blue_ladder, :dbpia, :riss, :ms_office, :aws_credit_normal, :aws_credit_100, :github, :jet_brain, :job_planet, :win10, :inflearn, :edwith, :goorm_ide, :KFC, :adobe, :AOC, :Y_goon, :etc, :etc_content, :matlab, :samsung_dreamclass, :korail_youth, :lh, :software, :autodesk, :dreamspon, :everytime, :teps)
     end
 end
