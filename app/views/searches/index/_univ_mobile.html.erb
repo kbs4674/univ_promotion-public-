@@ -8,7 +8,7 @@
             <% end %>
         </div>
     <% else %>
-        <% @searches.each do |x| %>
+        <% @searches.order("impressions_count DESC").each do |x| %>
             <%= link_to univ_path(x), style: "color: black; text-decoration: none" do %>
                 <div align="center">
                     <div class="row univ-mobile_list_box">
