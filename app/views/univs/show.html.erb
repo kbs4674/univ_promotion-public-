@@ -84,6 +84,12 @@
       <% end %>
     <% end %>
     
+    <% if @univ.teps == true %>
+      <% Promotion.where(title: "TEPS 30% 할인").each do |x| %>
+        <%= render 'univs/show/card', x: x %>
+      <% end %>
+    <% end %>
+    
     <% if @univ.ms_office == true %>
       <% Promotion.where(title: "MS Office").each do |x| %>
         <%= render 'univs/show/card', x: x %>
