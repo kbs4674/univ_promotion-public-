@@ -14,6 +14,6 @@ class SearchesController < ApplicationController
   end
   
   def univ_search
-    @searches = Univ.where("univ_name_kor like ?", "%#{params[:search_univ]}%").page(params[:page]).per(10).or(Univ.where("univ_name_eng like ?", "%#{params[:search_univ]}%").page(params[:page]).per(10)).or(Univ.where("content like ?", "%#{params[:search_univ]}%").page(params[:page]).per(10)).or(Univ.where("univ_nickname like ?", "%#{params[:search_univ]}%").page(params[:page]).per(10))
+    @searches = Univ.where("univ_name_kor like ?", "%#{params[:search_univ]}%").order("impressions_count DESC").page(params[:page]).per(10).or(Univ.where("univ_name_eng like ?", "%#{params[:search_univ]}%").order("impressions_count DESC").page(params[:page]).per(10)).or(Univ.where("content like ?", "%#{params[:search_univ]}%").order("impressions_count DESC").page(params[:page]).per(10)).or(Univ.where("univ_nickname like ?", "%#{params[:search_univ]}%").order("impressions_count DESC").page(params[:page]).per(10))
   end
 end

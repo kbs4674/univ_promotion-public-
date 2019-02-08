@@ -4,7 +4,7 @@ class UnivsController < ApplicationController
   before_action :set_univ, only: [:show, :edit, :update, :destroy]
   
   # 조회수
-  impressionist actions: [:show], unique: [:ip_address]
+  impressionist actions: [:show]
   
   
   # GET /univs

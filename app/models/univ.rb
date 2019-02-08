@@ -2,7 +2,7 @@ class Univ < ApplicationRecord
     mount_uploader :banner_image, UnivBannerUploader
     mount_uploader :logo_image, UnivLogoUploader
     
-    is_impressionable
+    is_impressionable :counter_cache => true
     
     # 이미지를 가진 게시글 삭제 시 AWS S3서버에도 자동 삭제처리
     before_destroy :destroy_assets
