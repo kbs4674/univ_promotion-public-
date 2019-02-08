@@ -5,7 +5,8 @@
   <% if (user_signed_in?) && (current_user.has_role? :admin) %>
     <div class="row" style="background-color: #ffbebe; padding: 10px; margin-top: 30px;">
       <div class="col-md-2" style="padding-top: 5px"><i class="fas fa-exclamation-triangle"></i> 관리자 Zone</div>
-      <div class="col-md-10">
+      <div class="col-md-1" style="padding-top: 5px"><i class="fas fa-eye"></i> <%= @univ.impressionist_count %></div>
+      <div class="col-md-9">
         <% if can? :destroy, @univ %>
           <%= link_to '삭제', @univ, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: '정말로 삭제하시겠습니까?' } %>
         <% end %>

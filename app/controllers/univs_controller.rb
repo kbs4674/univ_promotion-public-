@@ -2,7 +2,11 @@ class UnivsController < ApplicationController
   #before_action :authenticate_user!, except: [:index, show]
   load_and_authorize_resource
   before_action :set_univ, only: [:show, :edit, :update, :destroy]
-
+  
+  # 조회수
+  impressionist actions: [:show], unique: [:ip_address]
+  
+  
   # GET /univs
   # GET /univs.json
   def index
