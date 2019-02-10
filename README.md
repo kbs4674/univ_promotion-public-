@@ -39,12 +39,13 @@
 11. ```app/views/univs/show/_card.html.erb``` [<a href="/app/views/univs/show/_card.html.erb">이동</a>] Univ 에서 대학 헤택 열람 시 혜택에 대한 소개 (부트스트랩 Modal View)
 12. ```app/views/promotions/index/_index_main.html.erb``` [<a href="/app/views/promotions/index/_index_main.html.erb">이동</a>] Promotion 에서 대학 헤택 열람 시 혜택에 대한 소개 (부트스트랩 Modal View)
 13. ```config/initializers/devise.rb``` [<a href="/config/initializers/devise.rb">이동</a>] 네이버 및 페이스북 아이디 로그인 설정 : 네이버/페이스북/구글 API 계정 입력
-14. ```app/models/identity.rb``` [<a href="/app/models/identity.rb">이동</a>] 네이버/페이스북/구글 아이디 로그인 설정 : API 연동 설정
-15. ```app/controllers/users/omniauth_callbacks_controller.rb``` [<a href="/app/controllers/users/omniauth_callbacks_controller.rb">이동</a>] 네이버/페이스북/구글 아이디 로그인 설정 : Devise Gem 단에서 외부 로그인(Omniauth) 이벤트 연동/콜백 설정
-16. ```db/seeds.rb``` [<a href="/db/seeds.rb">이동</a>] 미리 작성해 둔 대학교/혜택에 대한 데이터
-17. ```public/Top_Scroll_Btn/Top_Scroll_Btn.js``` [<a href="/public/Top_Scroll_Btn/Top_Scroll_Btn.js">이동</a>] 클릭 시 홈페이지 맨 위로 이동하는 버튼
-18. ```app/views/layouts/application.html.erb``` [<a href="/app/views/layouts/application.html.erb">이동</a>] 메뉴바 등 공통으로 보여지는 홈페이지 디자인 View 및 CSS/Javascript
-19. ```app/controllers/messages_controller.rb``` [<a href="/app/controllers/messages_controller.rb">이동</a>] 쪽지 시스템 관련 Controller
+14. ```app/models/identity.rb``` [<a href="/app/models/identity.rb">이동</a>] 네이버/페이스북/구글 아이디 로그인 설정 : API 연동 설정 및 연동로그인을 이용한 로그인 기록 저장
+15. ```app/models/user.rb``` [<a href="/app/models/user.rb">이동</a>] 네이버/페이스북/구글 아이디 로그인 설정 : API 연동 설정
+16. ```app/controllers/users/omniauth_callbacks_controller.rb``` [<a href="/app/controllers/users/omniauth_callbacks_controller.rb">이동</a>] 네이버/페이스북/구글 아이디 로그인 설정 : Devise Gem 단에서 외부 로그인(Omniauth) 이벤트 연동/콜백 설정
+17. ```db/seeds.rb``` [<a href="/db/seeds.rb">이동</a>] 미리 작성해 둔 대학교/혜택에 대한 데이터
+18. ```public/Top_Scroll_Btn/Top_Scroll_Btn.js``` [<a href="/public/Top_Scroll_Btn/Top_Scroll_Btn.js">이동</a>] 클릭 시 홈페이지 맨 위로 이동하는 버튼
+19. ```app/views/layouts/application.html.erb``` [<a href="/app/views/layouts/application.html.erb">이동</a>] 메뉴바 등 공통으로 보여지는 홈페이지 디자인 View 및 CSS/Javascript
+20. ```app/controllers/messages_controller.rb``` [<a href="/app/controllers/messages_controller.rb">이동</a>] 쪽지 시스템 관련 Controller
 
 ## 5. M : 모델 설명
 * Ability : 권한에 따른 허용 권한범위 설정
