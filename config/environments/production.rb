@@ -1,13 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   
-  # devise 이메일 전송
-  config.action_mailer.default_url_options = { host: ENV['HOSTING'] }
-  
   # Mailgun 이메일 설정
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: '(자신의 사이트 주소)' }
+  config.action_mailer.default_url_options = { host: ENV['HOSTING'] }
   ActionMailer::Base.smtp_settings = {
     :address              => 'smtp.gmail.com',
     :domain               => 'mail.google.com',
