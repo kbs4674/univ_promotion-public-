@@ -5,10 +5,17 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV['HOSTING'] }
   
   # Mailgun 이메일 설정
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV['MAILGUN_API'],
-    domain: ENV['MAILGUN_DOMAIN']
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: '(자신의 사이트 주소)' }
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.gmail.com',
+    :domain               => 'mail.google.com',
+    :port                 => 25,
+    :user_name            => ENV['EMAIL_ID'],
+    :password             => ENV['EMAIL_PASSWORD'],
+    :authentication       => 'login',
+    :enable_starttls_auto => true
   }
 
   # Code is not reloaded between requests.
