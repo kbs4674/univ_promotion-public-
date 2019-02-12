@@ -17,7 +17,7 @@
           <%= link_to '수정', edit_univ_path(@univ), class: 'btn btn-sm btn-outline-dark' %>
         <% end %>
         <% if can? :index, @univ %>
-          <%= link_to '목록', univs_path, class: 'btn btn-sm btn-outline-dark' %>
+          <%= link_to '목록', "/searches/univ?utf8=✓&search_univ=&commit=", class: 'btn btn-sm btn-outline-dark' %>
         <% end %>
       </div>
     </div>

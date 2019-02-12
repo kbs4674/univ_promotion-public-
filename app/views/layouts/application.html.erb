@@ -17,6 +17,17 @@
     <!-- 카카오톡 썸네일 노출 -->
     <meta property="og:image" content="<%= asset_path 'kakao_thumb.png' %>">
     
+    <!-- 구글 애널리틱스 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134347713-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'UA-134347713-1');
+    </script>
+
+    
     <!-- //검색엔진 최적화 -->
     <meta name="title" content="담다 : 대학의 혜택을"/>
     <meta name="keywords" content="윈10, Window10, MS Office, 마소 오피스, 오피스, 파워포인트, PPT, Window10, 인프런, 국장, 국가장학금, 한국장학재단, 장학금, 대학생활, 대학, 대학생혜택, 대학생, 대학교">

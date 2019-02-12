@@ -16,6 +16,14 @@
       <%= f.label :"닉네임" %><br />
       <%= f.text_field :nickname, class: "form-control", required: true, autofocus: true %>
     </div>
+    
+    <div style="margin-top: 10px; color: gray;">
+      <small>
+        <i class="fas fa-exclamation-triangle"></i> 주의<br/>
+        외부아이디 로그인을 통한 회원가입 시, 닉네임 설정이 안됩니다.<br/>
+        (로그아웃 후, <a href="/users/password/new">비밀번호 찾기</a>를 통해 비밀번호 변경 후, 닉네임 변경 바랍니다!)
+      </small>
+    </div>
   
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div><%= resource.unconfirmed_email %> 계정에 대한 인증을 기다리고있습니다.</div>
