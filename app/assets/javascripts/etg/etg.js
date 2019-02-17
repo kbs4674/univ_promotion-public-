@@ -9,23 +9,23 @@ if (e.keyCode == 65 || e.keyCode == 68 || e.keyCode == 69 || e.keyCode == 73 || 
 }
 
 if (char.sort().toString() == e1.sort().toString() || char.sort().toString() == e2.sort().toString()) {
-    $(".trg").bind("click", function(){
-    $(".trg").css("background-image", "url('/img/likelion_background.png')");
-    $(".trg").css("position", "fixed");
-    $(".trg").css("background-size", "100% 100%");
-    $(".trg").css("width", "100%");
-    $(".trg").css("height", "100%");
-    $(".trg").css("z-index", "5000000");
-    $(".trg").css("margin-top", "-2340px");
-    $(".trg").fadeIn();
-    setTimeout(function() {
-        $(".trg").fadeOut();
-    }, 3000);
-    
-    $(".trg").click(function(){
-        $(".trg").fadeOut();
+    $(".trg").bind("click", function() {
+        $(".trg").css("background-image", "url('/img/likelion_background.png')");
+        $(".trg").css("position", "fixed");
+        $(".trg").css("background-size", "100% 100%");
+        $(".trg").css("width", "100%");
+        $(".trg").css("height", "100%");
+        $(".trg").css("z-index", "5000000");
+        $(".trg").css("margin-top", "-2340px");
+        $(".trg").fadeIn();
+        setTimeout(function() {
+            $(".trg").fadeOut();
+        }, 3000);
+        
+        $(".trg").click(function(){
+            $(".trg").fadeOut();
+        });
     });
-});
 
     $("#lkn").trigger("click");
         char.push("end");

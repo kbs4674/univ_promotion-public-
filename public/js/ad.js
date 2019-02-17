@@ -1,0 +1,1 @@
+$(".ad-image").delay(4000).fadeOut(1000, function() { $(this).remove(); });
