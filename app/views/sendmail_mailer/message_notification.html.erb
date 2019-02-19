@@ -1,2 +1,11 @@
-<div><%= @message.conversation.sender.nickname %> 님으로부터 메세지가 도착했습니다.</div>
-<div><%= @message.body %></div>
+<div>
+    <div align="center" style="padding: 10px 50px 10px 50px; border-width: 3px; border-style: solid; border-image: linear-gradient( to right, #23ff3e, #349ddb ) 100% 1%; width: 50%">
+        <div style="text-align: left; margin: 20px 10px 0px 0px;"><span style="color: #05872c; font-weight: bold;"><%= @message.conversation.sender.nickname %></span> 님으로부터 메세지가 도착했습니다.</div>
+        <div style="text-align: left; margin-top: 20px; margin-bottom: 10px; padding: 10px 0px 10px 10px; background-color: #e8e8e8;">
+            <%= @message.body %>
+            <div style="margin-top: 20px;"><span style="padding: 3px 10px 3px 10px; background-color: #2ea2f5; color: white; margin-right: 10px; border-radius: 5px;">이동</span><a href="//www.damda.info/users/message" target="_blank" style="text-decoration: none; color: #232323">www.damda.info/users/message</a></div>
+        </div>
+        <div style="margin-top: 50px; margin-bottom: 5px; color: #868686">대학의 혜택을 담다,</div>
+        <div align="center" style="margin-bottom: 20px;"><a href="//www.damda.info" target="_blank" style="text-decoration: none; color: #868686">http://www.damda.info</a></div>
+    </div>
+</div>
