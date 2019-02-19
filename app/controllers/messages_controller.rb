@@ -15,6 +15,9 @@ class MessagesController < ApplicationController
         @conversation = Conversation.includes(:recipient).find(params[:conversation_id])
         @message = @conversation.messages.create(message_params)
         if Message.create
+            ## 이메일 전송
+            SendmailMailer.message_notification(@message).deliver_now
+        
             if ((@message.user.nickname == @conversation.recipient.nickname) && (@conversation.recipient.nickname != @conversation.sender.nickname))
                 @new_notification = NewNotification.create! user: Conversation.find(params[:conversation_id]).sender,
                 content: "#{current_user.nickname.truncate(15, omission: '...')} 님으로 부터 쪽지가 왔습니다.",

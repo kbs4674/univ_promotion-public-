@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   
-  # Mailgun 이메일 설정
+  # Devise 이메일 설정
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: ENV['HOSTING'] }
@@ -13,6 +13,13 @@ Rails.application.configure do
     :password             => ENV['EMAIL_PASSWORD'],
     :authentication       => 'login',
     :enable_starttls_auto => true
+  }
+  
+  # Mailgun 이메일 설정
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAILGUN_API'],
+    domain: ENV['MAILGUN_DOMAIN']
   }
 
   # Code is not reloaded between requests.
