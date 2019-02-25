@@ -448,6 +448,19 @@
     color: white;
   }
   
+  .instruct_url_link {
+    color: white;
+    background-color: #2cadde;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 1px rgba(125, 125, 125, 0.36);
+  }
+  
+  .instruct_url_link:hover {
+    text-decoration: none;
+    color: white;
+  }
+  
   .top-notice {
     background-color: #230404;
     text-align: center;

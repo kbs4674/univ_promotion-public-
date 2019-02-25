@@ -54,6 +54,9 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <% if x.instruct_url != nil %>
+                    <%= link_to " 이용방법", x.instruct_url, target: "_blank", class: "fas fa-chalkboard-teacher instruct_url_link" %>
+                <% end %>
                 <%= link_to " 이동", x.url, target: "_blank", class: "fas fa-external-link-alt promotion_link" %>
             </div>
         </div>

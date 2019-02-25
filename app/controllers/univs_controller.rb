@@ -174,7 +174,7 @@ class UnivsController < ApplicationController
   def destroy
     @univ.destroy
     respond_to do |format|
-      format.html { redirect_to univs_url, notice: '목록에서 대학이 삭제되었습니다.' }
+      format.html { redirect_to searches_univ_path, notice: '목록에서 대학이 삭제되었습니다.' }
       format.json { head :no_content }
     end
   end

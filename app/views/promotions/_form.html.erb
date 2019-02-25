@@ -22,6 +22,11 @@
   </div>
   
   <div class="field row">
+    <div class="col-md-2"><%= form.label :"이용방법 설명 URL 주소" %></div>
+    <div class="col-md-10"><%= form.text_field :instruct_url, id: :promotion_instruct_url, class: "input_noborder" %></div>
+  </div>
+  
+  <div class="field row">
     <div class="col-md-2"><%= form.label :"썸네일 사진 이름" %></div>
     <div class="col-md-10"><%= form.text_field :thumb, id: :promotion_thumb, class: "input_noborder" %></div>
   </div>
@@ -32,22 +37,22 @@
   </div>
   <hr/>
     태그옵션 
-    <%= link_to "#기본제공", "javascript: void(0)", onclick: "addTextTag('#기본제공 '); return false" %>
-    <%= link_to "#공대", "javascript: void(0)", onclick: "addTextTag('#공대 '); return false" %>
-    <%= link_to "#컴퓨터공학", "javascript: void(0)", onclick: "addTextTag('#컴퓨터공학 '); return false" %>
-    <%= link_to "#디자이너", "javascript: void(0)", onclick: "addTextTag('#디자이너 '); return false" %>
-    <%= link_to "#미대", "javascript: void(0)", onclick: "addTextTag('#미대 '); return false" %>
-    <%= link_to "#일상樂", "javascript: void(0)", onclick: "addTextTag('#일상樂 '); return false", style: "font-family: nanum-gothic" %>
-    <%= link_to "#먹방", "javascript: void(0)", onclick: "addTextTag('#먹방 '); return false" %>
-    <%= link_to "#스터디", "javascript: void(0)", onclick: "addTextTag('#스터디 '); return false" %>
-    <%= link_to "#학업", "javascript: void(0)", onclick: "addTextTag('#학업 '); return false" %>
-    <%= link_to "#장학금", "javascript: void(0)", onclick: "addTextTag('#장학금 '); return false" %>
-    <%= link_to "#소프트웨어", "javascript: void(0)", onclick: "addTextTag('#소프트웨어 '); return false" %>
-    <%= link_to "#하드웨어", "javascript: void(0)", onclick: "addTextTag('#하드웨어 '); return false" %>
-    <%= link_to "#할인", "javascript: void(0)", onclick: "addTextTag('#할인 '); return false" %>
-    <%= link_to "#우리만_있다", "javascript: void(0)", onclick: "addTextTag('#우리만_있다 '); return false" %>
-    <%= link_to "#무료", "javascript: void(0)", onclick: "addTextTag('#무료 '); return false" %>
-    <%= link_to "#취업", "javascript: void(0)", onclick: "addTextTag('#취업 '); return false" %>
+    <%= link_to "#기본제공", "javascript: void(0)", onclick: "addTextTag('#기본제공'); return false" %>
+    <%= link_to "#공대", "javascript: void(0)", onclick: "addTextTag('#공대'); return false" %>
+    <%= link_to "#컴퓨터공학", "javascript: void(0)", onclick: "addTextTag('#컴퓨터공학'); return false" %>
+    <%= link_to "#디자이너", "javascript: void(0)", onclick: "addTextTag('#디자이너'); return false" %>
+    <%= link_to "#미대", "javascript: void(0)", onclick: "addTextTag('#미대'); return false" %>
+    <%= link_to "#일상樂", "javascript: void(0)", onclick: "addTextTag('#일상樂'); return false", style: "font-family: nanum-gothic" %>
+    <%= link_to "#먹방", "javascript: void(0)", onclick: "addTextTag('#먹방'); return false" %>
+    <%= link_to "#스터디", "javascript: void(0)", onclick: "addTextTag('#스터디'); return false" %>
+    <%= link_to "#학업", "javascript: void(0)", onclick: "addTextTag('#학업'); return false" %>
+    <%= link_to "#장학금", "javascript: void(0)", onclick: "addTextTag('#장학금'); return false" %>
+    <%= link_to "#소프트웨어", "javascript: void(0)", onclick: "addTextTag('#소프트웨어'); return false" %>
+    <%= link_to "#하드웨어", "javascript: void(0)", onclick: "addTextTag('#하드웨어'); return false" %>
+    <%= link_to "#할인", "javascript: void(0)", onclick: "addTextTag('#할인'); return false" %>
+    <%= link_to "#우리만_있다", "javascript: void(0)", onclick: "addTextTag('#우리만_있다'); return false" %>
+    <%= link_to "#무료", "javascript: void(0)", onclick: "addTextTag('#무료'); return false" %>
+    <%= link_to "#취업", "javascript: void(0)", onclick: "addTextTag('#취업'); return false" %>
   <hr/>
   
   <script>

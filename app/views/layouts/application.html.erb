@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>담다 : 대학의 혜택을</title>
+    <% if @univ.present? %>
+      <title>담다 : <%= @univ.univ_name_kor %>의 혜택을</title>
+    <% else %>
+      <title>담다 : 대학의 혜택을</title>
+    <% end %>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
     
     <%= csrf_meta_tags %>
@@ -29,15 +33,31 @@
 
     
     <!-- //검색엔진 최적화 -->
-    <meta name="title" content="담다 : 대학의 혜택을"/>
+    <% if @univ.present? %>
+      <meta name="title" content="담다 : <%= @univ.univ_name_kor %>의 혜택을"/>
+    <% else %>
+      <meta name="title" content="담다 : 대학의 혜택을"/>
+    <% end %>
     <meta name="keywords" content="윈10, Window10, MS Office, 마소 오피스, 오피스, 파워포인트, PPT, Window10, 인프런, 국장, 국가장학금, 한국장학재단, 장학금, 대학생활, 대학, 대학생혜택, 대학생, 대학교">
     <meta name="description" content="대학생이면 혜택을 누리자!">
     
-    <meta property="og:title" content="담다 : 대학의 혜택을">
+    <% if @univ.present? %>
+      <meta property="og:title" content="담다 : <%= @univ.univ_name_kor %>의 혜택을">
+    <% else %>
+      <meta property="og:title" content="담다 : 대학의 혜택을">
+    <% end %>
     <meta property="og:description" content="대학생이면 이젠 알고 혜택을 누리자!">
-    <meta property="og:site_name" content="담다 : 대학의 혜택을">
+    <% if @univ.present? %>
+      <meta property="og:site_name" content="담다 : <%= @univ.univ_name_kor %>의 혜택을">
+    <% else %>
+      <meta property="og:site_name" content="담다 : 대학의 혜택을">
+    <% end %>
     
-    <meta name="twitter:title" content="담다 : 대학의 혜택을">
+    <% if @univ.present? %>
+      <meta name="twitter:title" content="담다 : <%= @univ.univ_name_kor %>의 혜택을">
+    <% else %>
+      <meta name="twitter:title" content="담다 : 대학의 혜택을">
+    <% end %>
     <meta name="twitter:description" content="대학생이면 이젠 알고 혜택을 누리자!">
     <!-- 검색엔진 최적화// -->
     

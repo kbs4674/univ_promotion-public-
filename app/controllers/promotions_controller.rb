@@ -75,7 +75,7 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       if @promotion.save
-        format.html { redirect_to @promotion, notice: '새 혜택이 추가되었습니다.' }
+        format.html { redirect_to promotions_path, notice: '새 혜택이 추가되었습니다.' }
         format.json { render :show, status: :created, location: @promotion }
       else
         format.html { render :new }
@@ -89,7 +89,7 @@ class PromotionsController < ApplicationController
   def update
     respond_to do |format|
       if @promotion.update(promotion_params)
-        format.html { redirect_to @promotion, notice: '혜택이 수정되었습니다.' }
+        format.html { redirect_to promotions_path, notice: '혜택이 수정되었습니다.' }
         format.json { render :show, status: :ok, location: @promotion }
       else
         format.html { render :edit }
@@ -116,6 +116,6 @@ class PromotionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promotion_params
-      params.require(:promotion).permit(:title, :thumb, :url, :content, :univ_hashtag)
+      params.require(:promotion).permit(:title, :thumb, :url, :content, :univ_hashtag, :instruct_url)
     end
 end

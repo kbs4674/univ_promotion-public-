@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-  <% @promotions.each do |x| %>
+  <% @promotions.uniq.each do |x| %>
     <div class="col-md-4" style="margin-top: 30px">
       <%= link_to "javascript:void(0)" do %>
         <div class="image" data-toggle="modal" data-target="#exampleModal-<%= x.id %>">
@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<% @promotions.each do |x| %>
+<% @promotions.uniq.each do |x| %>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal-<%= x.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -63,6 +63,9 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <% if x.instruct_url != nil %>
+                    <%= link_to " 이용방법", x.instruct_url, target: "_blank", class: "fas fa-chalkboard-teacher instruct_url_link" %>
+                <% end %>
                 <%= link_to " 이동", x.url, target: "_blank", class: "fas fa-external-link-alt promotion_link" %>
             </div>
         </div>
