@@ -8,11 +8,3 @@ document.addEventListener('DOMContentLoaded', function() {
     loopCount: Infinity,
   });
 });
-
-function toggleLoop(typed) {
-  if (typed.loop) {
-    typed.loop = false;
-  } else {
-    typed.loop = true;
-  }
-}
